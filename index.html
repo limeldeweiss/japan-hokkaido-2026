@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>日本北海道8日遊</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#1a2744;
+  --navy-light:#243259;
+  --navy-mid:#1e3060;
+  --navy-accent:#2d4a8a;
+  --gold:#c8a84b;
+  --gold-light:#e8d5a0;
+  --red:#c0392b;
+  --cream:#f5f7fa;
+  --white:#ffffff;
+  --text:#1e2733;
+  --text-light:#5a6478;
+  --border:#d8dfe8;
+  --shadow:0 2px 16px rgba(26,39,68,0.10);
+}
+html,body{width:100%;overflow-x:hidden;background:var(--cream);color:var(--text);font-family:'Noto Sans TC',sans-serif}
+
+/* ── BANNER ── */
+.banner{background:linear-gradient(150deg,#0d1b38 0%,var(--navy) 45%,var(--navy-accent) 100%);color:#fff;position:relative;overflow:hidden;padding:0}
+.banner-bg{position:absolute;inset:0;pointer-events:none}
+.banner-content{position:relative;z-index:2;padding:38px 24px 30px}
+.banner-eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-light);margin-bottom:10px;font-weight:500}
+.banner-title{font-family:'Playfair Display',serif;font-size:clamp(30px,6vw,54px);font-weight:900;line-height:1.1;letter-spacing:-0.5px;color:#fff}
+.banner-title span{color:var(--gold-light)}
+.banner-sub{margin-top:14px;font-size:14px;color:rgba(255,255,255,0.78);line-height:1.85}
+.banner-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.pill{background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.22);border-radius:20px;padding:6px 16px;font-size:12px;color:rgba(255,255,255,0.9);letter-spacing:0.3px;cursor:pointer;font-family:'Noto Sans TC',sans-serif;display:inline-flex;flex-direction:column;align-items:center;gap:1px;transition:background 0.2s}
+.pill:hover{background:rgba(255,255,255,0.22)}
+.pill.red{background:var(--red);border-color:var(--red)}
+.pill.red:hover{background:#a93224}
+.pill-ja{font-size:13px;font-weight:600;line-height:1.2}
+.pill-en{font-size:8px;font-weight:400;opacity:0.65;letter-spacing:0.5px;line-height:1}
+.banner-mountain{position:absolute;bottom:0;left:0;right:0;pointer-events:none}
+
+/* ── NAV TABS ── */
+.tabs-wrapper{background:var(--navy);position:sticky;top:0;z-index:100;box-shadow:0 3px 10px rgba(0,0,0,0.35)}
+.tabs{
+  display:flex;
+  flex-wrap:nowrap;
+  overflow:hidden;          /* 不滑動、不折行，直接等寬塞滿 */
+  padding:4px 4px 0;
+  gap:1px;
+}
+.tab{
+  flex:1 1 0;               /* 9個tab等寬塞滿100% */
+  min-width:0;
+  padding:7px 2px 9px;
+  font-size:11px;
+  color:rgba(255,255,255,0.5);
+  font-weight:500;
+  cursor:pointer;
+  border-bottom:3px solid transparent;
+  border-top:none;border-left:none;border-right:none;
+  transition:all 0.2s;
+  font-family:'Noto Sans TC',sans-serif;
+  background:none;
+  text-align:center;
+  line-height:1.25;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:1px;
+  overflow:hidden;
+}
+.tab:hover{color:rgba(255,255,255,0.85)}
+.tab.active{color:#fff;border-bottom-color:var(--gold);background:rgba(255,255,255,0.06);border-radius:6px 6px 0 0}
+.tab-day{font-size:10px;font-weight:700;letter-spacing:0.5px;opacity:0.7;text-transform:uppercase}
+.tab.active .tab-day{opacity:1;color:var(--gold-light)}
+.tab-city{font-size:13px;font-weight:600;white-space:nowrap}
+
+/* ── MAIN ── */
+.main{max-width:860px;margin:0 auto;padding:24px 16px 60px}
+
+/* ── OVERVIEW HERO ── */
+.overview-hero{background:linear-gradient(150deg,#0d1b38 0%,var(--navy) 60%,var(--navy-accent) 100%);border-radius:16px;padding:28px;color:#fff;margin-bottom:24px}
+.overview-hero h2{font-family:'Playfair Display',serif;font-size:23px;margin-bottom:7px}
+.overview-hero p{font-size:15px;opacity:0.85;line-height:1.75}
+
+/* ── INFO GRID ── */
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px}
+.info-card{background:var(--white);border-radius:12px;padding:18px;box-shadow:var(--shadow)}
+.info-card h4{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);margin-bottom:8px;font-weight:700;opacity:0.65}
+.info-card p{font-size:14px;line-height:1.75;color:var(--text)}
+.info-card.full{grid-column:1/-1}
+.flight-row{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);font-size:14px}
+.flight-row:last-child{border:none;padding-bottom:0}
+.flight-badge{background:var(--red);color:#fff;border-radius:6px;padding:3px 9px;font-size:11.5px;font-weight:700;flex-shrink:0}
+
+/* ── TABLE ── */
+.table-wrap{background:var(--white);border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
+.ov-table{width:100%;border-collapse:collapse;font-size:13.5px}
+.ov-table th{background:var(--navy);color:#fff;padding:12px 14px;text-align:left;font-weight:600;font-size:12.5px;letter-spacing:0.5px}
+.ov-table td{padding:12px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.65}
+.ov-table tr:last-child td{border:none}
+.ov-table tr:nth-child(even) td{background:#f5f7fa}
+.day-badge{display:inline-block;background:var(--navy);color:#fff;border-radius:6px;padding:2px 9px;font-size:11.5px;font-weight:700;white-space:nowrap}
+
+/* ── TIPS ── */
+.tips-card{background:var(--white);border-radius:12px;padding:20px;box-shadow:var(--shadow);margin-top:24px}
+.tips-card h3{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:14px;display:flex;align-items:center;gap:6px}
+.tip-item{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-bottom:1px dashed var(--border);font-size:14px;line-height:1.7}
+.tip-item:last-child{border:none}
+.tip-icon{flex-shrink:0;font-size:16px;margin-top:1px}
+
+/* ── DAY HEADER ── */
+.day-header{background:linear-gradient(150deg,#0d1b38 0%,var(--navy) 60%,var(--navy-accent) 100%);border-radius:16px;padding:26px;color:#fff;margin-bottom:28px;position:relative;overflow:hidden}
+.day-header::after{content:'';position:absolute;right:-20px;top:-20px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,0.04)}
+.day-num{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-light);margin-bottom:6px;font-weight:600}
+.day-title{font-family:'Playfair Display',serif;font-size:27px;font-weight:900;line-height:1.1}
+.day-city-pill{display:inline-block;background:var(--red);border-radius:20px;padding:5px 16px;font-size:13px;margin-top:12px;font-weight:500}
+
+/* ── TIMELINE ── */
+.timeline{display:flex;flex-direction:column;gap:10px;position:relative;padding-left:0}
+.timeline::before{
+  content:'';position:absolute;
+  left:10px;
+  top:0;bottom:0;
+  width:2px;
+  background:linear-gradient(to bottom,var(--navy-accent),var(--navy));
+  border-radius:2px;opacity:0.4;
+  z-index:0;
+}
+.stop{
+  display:grid;
+  grid-template-columns:22px 1fr;
+  align-items:start;
+  gap:10px;
+  position:relative;
+  z-index:1;
+}
+.stop-dot{
+  width:22px;height:22px;border-radius:50%;
+  background:var(--navy);
+  color:#fff;
+  border:none;
+  display:flex;align-items:center;justify-content:center;
+  font-size:10px;font-weight:700;
+  flex-shrink:0;
+  margin-top:12px;
+  z-index:2;
+}
+.stop.transport .stop-dot{
+  background:var(--navy-accent);
+  width:14px;height:14px;margin-top:17px;margin-left:4px;
+}
+.stop.transport .stop-dot::after{display:none}
+.stop-card{background:var(--white);border-radius:12px;box-shadow:var(--shadow);overflow:hidden;cursor:pointer;transition:box-shadow 0.2s,transform 0.15s}
+.stop-card:hover{box-shadow:0 4px 24px rgba(26,39,68,0.14);transform:translateY(-1px)}
+.stop-card.transport-card{background:var(--navy);cursor:default;transform:none}
+.stop-card.transport-card:hover{transform:none;box-shadow:var(--shadow)}
+.stop-head{display:flex;align-items:center;gap:12px;padding:15px 16px}
+.stop-icon{font-size:21px;flex-shrink:0;line-height:1}
+.stop-info{flex:1;min-width:0}
+.stop-label{font-size:10.5px;letter-spacing:1px;text-transform:uppercase;font-weight:700;margin-bottom:3px;color:var(--navy);opacity:0.55}
+.stop-name{font-size:15px;font-weight:700;line-height:1.3;color:var(--navy)}
+.transport-card .stop-name{color:#fff;font-size:14px}
+.transport-card .stop-label{color:rgba(255,255,255,0.55)}
+.stop-arrow{font-size:12px;color:var(--navy);opacity:0.4;transition:transform 0.25s;flex-shrink:0}
+.stop-card.open .stop-arrow{transform:rotate(180deg);opacity:0.7}
+.stop-body{max-height:0;overflow:hidden;transition:max-height 0.35s cubic-bezier(0.4,0,0.2,1)}
+.stop-body.open{max-height:600px}
+.stop-body-inner{padding:0 16px 16px;border-top:1px solid var(--border)}
+.stop-body-inner p{font-size:14.5px;line-height:1.85;color:#374151;margin-top:12px}
+.tag-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.tag{display:inline-block;border-radius:20px;padding:3px 12px;font-size:12px;font-weight:600}
+.tag.food{background:#fef3e2;color:#92580a}
+.tag.sight{background:#e8f0fc;color:#1a4ea8}
+.tag.event{background:#fce8f3;color:#8f166e}
+.tag.transport{background:#e6ecf5;color:#1a2744}
+.tag.hotel{background:#e6ecf5;color:#1a2744}
+
+/* ── SECTION TITLE ── */
+.section-title{font-size:11.5px;letter-spacing:2px;text-transform:uppercase;color:var(--navy);opacity:0.5;font-weight:700;margin:28px 0 14px;display:flex;align-items:center;gap:8px}
+.section-title::after{content:'';flex:1;height:1px;background:var(--border)}
+
+/* ── HOTEL INLINE PILLS ── */
+.hotel-pill{background:#e6ecf5;color:#1a2744;border-radius:20px;padding:3px 12px;font-size:12px;font-weight:600}
+
+.view{display:none}.view.active{display:block}
+</style>
+  <!-- Favicon & PWA Icons -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0id2hpdGUiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSIzMCIgZmlsbD0iI0JDMDAyRCIvPjwvc3ZnPg=="/>
+  <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAABC0lEQVR42mP4T2PAMGrBULLg7/cfP569+vbgKZAEsqlmAdCs94fPPpm5+k7VxOvpTVcTaoAkkA0UAYoTtImABR9OXrrfNvuCb84Rebc9DLrICCgCFAfKAtWQacGrjfuA7j0k4YhmNDICygLVAFWSbAFQz6WQIjxGIyOgSlx2MOAKGaC7iDQdgoDqsYYVA9ZYBYYs/pDBGlZAXZhxjsUCYNoAxh5JpkMQUBdQL2ELgOkPM80Qg4C6gHoJWAD0IzCNk2E6BAH1ooUSugXAXArMR2RbANQLNAGfBcCSgNT0g5aWgCYMqA9oHgc0T0X0yAc0z8k0L4voUZrSoz6gR41GjzqZHq2K0ZYdrS0AAOrzROhtxHf9AAAAAElFTkSuQmCC"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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"/>
+  <link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoi5pel5pys5YyX5rW36YGTOOaXpemBiiIsInNob3J0X25hbWUiOiLljJfmtbfpgZMiLCJpY29ucyI6W3sic3JjIjoiZGF0YTppbWFnZS9wbmc7YmFzZTY0LGlWQk9SdzBLR2dvQUFBQU5TVWhFVWdBQUFNQUFBQURBQ0FJQUFBRGR2dnRRQUFBS0drbEVRVlI0MnUyZFQyaFQyUjdIaFM1bnRyTjRDM2VQMlQzTGU0c3BERGd3QTZJZ1Q0VHlIaUlNS2wyb3FJaWlDeXU2RUhGUlpMQkNCMEhvb2xBSWduUVJYWWdqMHo1OXhtY2RrMXByYW8waDB4Z05UYVZSMjhTVUpwbHZHeG0wdyt1MFNlNjU1OTc3K2ZLamhEUTU5M2QrOThQTitmTTc1NnlySXRTQTFoRUNCRUFJZ0JBQUlRQkNDSUFRQUNFQVFnQ0VFQUFoQUVJQWhBQUlJUUJDQUlRQUNBRVFRZ0NFQUFnQkVBSWdCRUFJQVJBQ0lBUkFDSUFRQWlBRVFBaUFFQUFoQkVBSWdCQUFJUUR5cThxbCtWSnVwcGpLek1hVGIyUGpiNFlmNXlNaitic3gvZFZydmFQMzlWOTlScDhrWEVFSGFLRlFuRXRNenR5SlRnM2Nlbkg1YXFxck45SFpQWDd3M05pZVU2TTdqbzlzUHh6ZGVpQzZaZC9Eelh2MVY2LzFqdDdYZi9VWmZWS2YxN2YwWFpXZ2NsUWFBQVVBbXJuQ3U5R0pYSGd3M1JONmR1TEMySzZUNHVQZTMvOTFlLzJtbnovNzZxZDFmMXU5NmZQNmxyNnJFbFNPU2xPWktsbmw2eW9BNUN2TlQrZjFuTWowRHVqSm9hZkkvYmFkLy9uTHQydkNaVFdtTWxXeXl0ZFZkQzFkVWRjRklHKzNhZFIyMGIyY09IWmV2MEgvL2V2V3BrUHovMHpYMGhWMVhWMWRQdmk0emVSUGdONW5wdlJya2p4ejZWSDcwYnRmL3RNWU4zODBYVjAreUJQNUk2OEF5SGFwUGZ1cS8vclRJMTBQTnU3KytmTTJGOUg1cE1IMGVadjhrVmZ5VFI0Q2tJMHFQRSsvN0F2SDk1Lzkzei8rYlFrM2Z6VDVKZy9scDd3RklGdFV5azVucjl4UTcxcDlJbXZSK2Rqa3A3eVZ6L0ljZ054VXBWSjVmVE9pWHMvdzE5OTdBcDJQVFQ3TGMvbXZXZ0NRQzVxTkp5Y3Y5c2UySGJLbnJWTkgyMGorcXhhcUN3QVpmUENVeTdsclEvb1ZjTGVIMWNTZW11cWlHcWxlQU9TNGlxbE11aWNVM1hyZ3A1WldIOUR6d1ZwYVZTUFZTN1VESUFlVmo0eW8zWEJ2UTd0LzBQbTRjYjJoWGJWVEhRSElFZVhDZzA4NlRnOTk4WTB2NmFtWmFxYzZxcVlBMUV3dEZJb3YrOElqMncvN0dKMlBUVFZWZlQweHcrOEJnRXE1bWZTUG9WKys2d2dJUFRWVGZWVnIxUjJBR3RMN3pOU3ZQL1RkYjlzWktIcHFwbHFyN3BiUG9Ga05VREdkVFhYMWVtVjgyYUV4YTBWQWNRQ2dlcDQ5aS9TMHRnZVduZzhNdGJZckR0WStoeXdGU0wvOWVub0grZG16N0Rta2FOalpIcklSSVBVKzFINE1acnRuaGZhUVltSmh2OHhHZ05TRERWcWZhNVg5TWtVR2dQNTh0REE0NHoxMWpBL1pOc1pvRjBENXlNaVRqdE9Bc29JcFBsYk5kVmdFVURHVlNYUjIrM3Vtb2lsekhZcVNQWE91dGdCVUtaZlRQU0cvenBJMmZjNVZzYklrOThNV2dITFhoaFl6Tk9CamRhWllLV0lBOUVHejhlVDR3WE8reXU5eFBuOUlFYk1oajlGOWdDcVZ5dVRGZm4va0Zock9ZMVRjWE0rbmRoK2cxemNqc1cySEFLSU9VOXdVdlVBRFZNcE9xMC9oM2F4NDEzUHlGVDEzMXdhNURGRDJ5ZzB2cnNpeGFtMlFZaGhRZ0FyUDA0dHRaemhvekJSREY5ZTV1Z25ReTc0dzgrMU5tYXQzY1k3TU5ZRG1FcFB4L1dlNS9VMHhSZEt0UFJ0Y0EraFYvM1diZDBId2xpbVNpbWVBQUhxZm1YcDZwSXNiMzBSVFBGM0pXblFIb0Z4NDhNSEczZHoxSnByaTZVcW1od3NBbFV2enlUT1hHUHRwK3BpUW9tcCtMejBYQUhvei9QaFIrMUZ1ZWROTlVWVnMvUTlRcG5lQW1TK0hac2NVVzU4RE5EK2RuemgybnB2dGtDbTJodmNXTmczUXpKMG9lVCtPNWdrcHduNEdTTTlZay9zMUI4MFVXOE8vWWtZQldwZ3JKRHE3dWMyT21pSnM4cXdGb3dDOUc1MFkzWEdjZSt5b0tjS0tzejhCeW9VSFdXOXFZQTJyeVJGRm93Q2xlMEpPbkhLQ0xUdnpSWEgySVVBTGhlS3pFeGU0d1FaTWNUYTJpdDRjUUhPSnliRmRKN203Qmt4eE5wYmRZUTZnbVR2Umg1djNjbmNObU9Kc2JEVElIRUJUQTdmSVB6U1dvNmhvK3cyZ0Y1ZXYzbDYvaWJ0cndCUm5SZHR2QUtXNmV0ZDZMaWxXWjJySFoxOHAycjRDcUZ5YVp3emE4SGkwbWR3Z1F3Q1Zjak9zNERHODFzZk1ub3FHQUNxbU1tTjdUbkZmemZYazk1d3lzNGVRSVlCbTQwbG13UXpQaUpuWnU4TVFRRzlqNCt4OGFIZzNSY1hjUHdDOUdYNU1IcG5oekRJeitkR0dBTXBIUnFKYjluRmZ6UUcwWlorWnZUaE5BWFEzeGp5RzRka014WnduRU1ZVGlEWVFiU0I2WWZUQ0dBZGlISWlSYUN5d0k5SE1oVEVYeG13OHMvSGtBNUVQUkVZaUZ0Q01SSEtpeVlsdVNLektZRlZHUTJKZEdPdkNHaElyVTFtWjJxaFlHOC9hK0liRTdoenN6dEdRMkIrSS9ZRWFhd2F4UXhrN2xEVW85a2gwMUh5K1IyS1ZYVnFkenlQeitTNnQ3QlB0cVBsL24rZ3FPOVU3Wm9IWXFiN0tXUm1PV1ZET3l1QzBIa2RTT0lKeldrK1Y4OEljc0FDZEYxYmx4RUlITEZnbkZsWTVNN1dwRnJnelU2dWMydHhVQytLcHpWWE9qVzllL21FUXo0MlhDcy9UclBWcHlnb2VSVEtJQUVuWkt6ZUd2LzRlQ09vMlJVOHhkUEVPdWd4UUtUdWQ2T3htVEtqdXNSOUZUekVNTGtEUzY1dVIyTFpEMEZDSEtXNktucnUzejMyQUtwWEs1TVYrWnNmcW1QbFMzQlM5b0FOVVhkcTdZN0UxM2RJS0ZxdTFsbFpGek16K0d4NEFhSEZ5NDlvUWVVSnJ5dnRSeEd5NGNiWUFWQ21YMHoyaGV4dmFnZVBQQjM0MnRDdFdpaGdBZmFKaUtxTSt4ZEFYMzRESUNxYjRLRXBtOXY3eEdFRFZwYjA0bjNTY2hwSVZUUEV4czN1bUp3R3FaWHF3bStJS094KzZrclBoSllCcWMyUy9mTmNCTHN0TU1YRnh6c3RMQUMwVWl1a2ZRNnhoWGJiZVZERXh0dUxkMndCVmwvWlUvUFdIUHVicWY1OXZWelRNN0hub0U0Q3FTMW1McWE3ZWU2MUI3OWdyQW9xREs5bUczZ1pvc1dPZnppNHlGT0Rua09xdUNDZ08xdDRqcXdHcVBZZjA5QTVtZTBpMVZ0MnRmZlo0QTZCYWUwanR4NkQxeTFSZjFkck9kby9IQUtyMXk5U0REYzc0a0dxcStsclk1L0lxUUwrUE1UN3BPTzN2dVE3VlRuVzBiYlRRSndEVjVqb1NuZDErblhOVnZWUTdxMllxL0FaUWJjNDEzUk5helAzd1UvNVFTNnRxcEhyWk0wdnFXNENxUzdrZnVXdEQ0d2ZQK1NPUFViVlFYVlFqU3pJMC9BOVFUYlB4NU9URi90aTJROTdOeVpmbjhsKzFzQ0czTUhBQVZaZnlxVi9maktqZDRNVzFRZkpabnN0LzEvT2Fnd3ZRaDRHaTdIVDJ5ZzM5Q25obHpGcCt5bHY1N082S0hBRDZSSVhuNlpkOTRmaitzemJ2MlNEZjVLSDhkSEV0S1FDdHBMbkU1S3YrNjArUGREM1l1TnVldHBFOGtUL3lTcjY1dFFzQ0FLMUI3ek5UdWZCZzhzeWxSKzFIM2UycDZlcnlRWjdJSDh0bnRRQm91Y3FsK1RmRGp6TzlBeFBIemtlM0hqQzVQN1d1cFN2cXVycTZmREMvOHh3QU5WUHowL21aTzFIZFMvVjZSbmNjdjkrMjA0a3pYMVNtU2xiNXVvcXVwU3NhM25FWGdCelh3bHpoM2VpRWZrM1NQYUZuSnk2TTdUcjVjUE5lOVlsdXI5KzAxdk5jOVhsOVM5OVZDU3BIcGFsTWxhenlUWjQwQUVEdXdWUW9xajJyNThUVXdLMFhsNittdW5yMTVGRHZlbXpQS1QxRlJyWWYxbTlRZE1zKzhhRy9lcTEzOUw3K3E4L29rL3E4dnFYdnFnU1Y0NG1aY3dCeXZNMVV5czBVVTVuWmVQSnRiRnh0bDN4a0pIODNwcjk2clhmMHZ2NnJ6L2k0VFFOQUNJQVFBQ0VBUWdpQUVBQWhBRUlBaEJBQUlRQkNBSVFBQ0NFQVFnQ0VBQWdCRUFJZ2hBQUlBUkFDSUFSQUNBRVFBaUFFUUFpQUVBSWdCRUFJZ0JBQUlRUkFDSUFRQUNFQVFnSFhiK1N5RjQvZ3AwMWhBQUFBQUVsRlRrU3VRbUNDIiwic2l6ZXMiOiIxOTJ4MTkyIiwidHlwZSI6ImltYWdlL3BuZyJ9XSwidGhlbWVfY29sb3IiOiIjMWEyNzQ0IiwiYmFja2dyb3VuZF9jb2xvciI6IiNmOGY2ZjIiLCJkaXNwbGF5Ijoic3RhbmRhbG9uZSJ9"/>
+  <meta name="theme-color" content="#1a2744"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+  <meta name="apple-mobile-web-app-title" content="北海道8日遊"/>
+</head>
+<body>
+
+<div class="banner">
+  <svg class="banner-bg" viewBox="0 0 800 220" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="650" cy="40" r="180" fill="rgba(45,74,138,0.18)"/>
+    <circle cx="750" cy="160" r="100" fill="rgba(255,255,255,0.04)"/>
+    <circle cx="80" cy="30" r="1.5" fill="rgba(255,255,255,0.4)"/>
+    <circle cx="200" cy="15" r="1" fill="rgba(255,255,255,0.3)"/>
+    <circle cx="350" cy="40" r="1.2" fill="rgba(255,255,255,0.35)"/>
+    <circle cx="500" cy="20" r="1" fill="rgba(255,255,255,0.3)"/>
+    <circle cx="620" cy="50" r="1.5" fill="rgba(255,255,255,0.25)"/>
+    <circle cx="720" cy="25" r="1" fill="rgba(255,255,255,0.4)"/>
+  </svg>
+  <svg class="banner-mountain" viewBox="0 0 800 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 80 L120 30 L220 55 L340 10 L420 45 L560 5 L680 40 L800 20 L800 80 Z" fill="rgba(255,255,255,0.04)"/>
+    <path d="M0 80 L80 50 L180 68 L300 38 L400 60 L520 28 L640 55 L760 35 L800 50 L800 80 Z" fill="rgba(255,255,255,0.06)"/>
+  </svg>
+  <div class="banner-content">
+    <div class="banner-eyebrow">✈ 2026 Japan Hokkaido Vacation</div>
+    <div class="banner-title">日本<span>北海道</span>8日遊</span></div>
+    <div class="banner-sub">2026年8月12日(三) — 8月19日(三)</div>
+    <div class="banner-pills">
+      <button class="pill red" onclick="jumpToCity('札幌')"><span class="pill-ja">札幌</span><span class="pill-en">Sapporo</span></button>
+      <button class="pill" onclick="jumpToCity('小樽')"><span class="pill-ja">小樽</span><span class="pill-en">Otaru</span></button>
+      <button class="pill" onclick="jumpToCity('旭川')"><span class="pill-ja">旭川*</span><span class="pill-en">Asahikawa</span></button>
+      <button class="pill" onclick="jumpToCity('登別')"><span class="pill-ja">登別</span><span class="pill-en">Noboribetsu</span></button>
+    </div>
+  </div>
+</div>
+
+<div class="tabs-wrapper">
+  <div class="tabs" id="tabs">
+    <button class="tab active" onclick="showView('overview',this)"><span class="tab-day">總覽<br>全部</span><span class="tab-city">行程</span></button>
+    <button class="tab" onclick="showView('day1',this)"><span class="tab-day">第1天<br>8/12</span><span class="tab-city">札幌</span></button>
+    <button class="tab" onclick="showView('day2',this)"><span class="tab-day">第2天<br>8/13</span><span class="tab-city">小樽</span></button>
+    <button class="tab" onclick="showView('day3',this)"><span class="tab-day">第3天<br>8/14</span><span class="tab-city">札幌</span></button>
+    <button class="tab" onclick="showView('day4',this)"><span class="tab-day">第4天<br>8/15</span><span class="tab-city">札幌</span></button>
+    <button class="tab" onclick="showView('day5',this)"><span class="tab-day">第5天<br>8/16</span><span class="tab-city">札幌</span></button>
+    <button class="tab" onclick="showView('day6',this)"><span class="tab-day">第6天<br>8/17</span><span class="tab-city">旭川</span></button>
+    <button class="tab" onclick="showView('day7',this)"><span class="tab-day">第7天<br>8/18</span><span class="tab-city">登別</span></button>
+    <button class="tab" onclick="showView('day8',this)"><span class="tab-day">第8天<br>8/19</span><span class="tab-city">札幌</span></button>
+  </div>
+</div>
+
+<div class="main">
+
+<div class="view active" id="overview">
+  <div class="overview-hero">
+    <h2>🗾 2026年8月北海道旅遊</h2>
+    <p>以札幌為基地，每日放射狀出遊。8月北海道氣溫約20–27°C，恰逢薰衣草季末、啤酒花園旺季，全程7晚住同一飯店，省去搬行李的煩惱。</p>
+  </div>
+  <div class="info-grid">
+    <div class="info-card">
+      <h4>✈ 去程</h4>
+      <div class="flight-row"><span class="flight-badge">CI130</span><span>8/12（三）抵達新千歲 13:35</span></div>
+    </div>
+    <div class="info-card">
+      <h4>✈ 回程</h4>
+      <div class="flight-row"><span class="flight-badge">CI131</span><span>8/19（三）新千歲出發 15:05</span></div>
+    </div>
+    <div class="info-card full">
+      <h4>🏨 住宿</h4>
+      <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:4px">Hotel ONE'S RESIDENCE</div>
+      <div style="font-size:13px;color:var(--text-light);margin-bottom:10px">中央區南8條西2丁目5-67（地鐵中島公園駅步行5分）</div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <span style="background:#e6ecf5;color:#1a2744;border-radius:20px;padding:3px 12px;font-size:12px;font-weight:600">7晚</span>
+        <span style="background:#e6ecf5;color:#1a2744;border-radius:20px;padding:3px 12px;font-size:12px;font-weight:600">€110/晚</span>
+        <span style="background:#e6ecf5;color:#1a2744;border-radius:20px;padding:3px 12px;font-size:12px;font-weight:600">小廚房・洗衣機</span>
+        <span style="background:#e6ecf5;color:#1a2744;border-radius:20px;padding:3px 12px;font-size:12px;font-weight:600">有電梯・冷氣</span>
+      </div>
+    </div>
+  </div>
+  <div class="section-title">8天行程一覽</div>
+  <div class="table-wrap">
+    <table class="ov-table">
+      <thead><tr><th>日期</th><th>地點</th><th>交通</th><th>亮點</th></tr></thead>
+      <tbody>
+        <tr><td><span class="day-badge">Day 1</span><br/>8/12（三）</td><td>新千歲→札幌</td><td>JR 45分</td><td>大通公園啤酒花園、成吉思汗烤羊肉</td></tr>
+        <tr><td><span class="day-badge">Day 2</span><br/>8/13（四）</td><td>小樽</td><td>JR 35分</td><td>小樽運河、LeTAO起司蛋糕、海鮮丼</td></tr>
+        <tr><td><span class="day-badge">Day 3</span><br/>8/14（五）</td><td>札幌南區</td><td>市電・地鐵</td><td>藻岩山夜景、北海道神宮、味噌拉麵</td></tr>
+        <tr><td><span class="day-badge">Day 4</span><br/>8/15（六）</td><td>札幌外圍</td><td>巴士・JR</td><td>羊ヶ丘展望台、ES CON FIELD 職棒</td></tr>
+        <tr><td><span class="day-badge">Day 5</span><br/>8/16（日）</td><td>札幌市中心</td><td>地鐵・步行</td><td>北大校園、赤煉瓦廳、薄野海鮮</td></tr>
+        <tr><td><span class="day-badge">Day 6</span><br/>8/17（一）</td><td>旭川</td><td>JR特急 90分</td><td>旭川拉麵、旭橋、買物公園</td></tr>
+        <tr><td><span class="day-badge">Day 7</span><br/>8/18（二）</td><td>登別</td><td>JR特急 70分</td><td>地獄谷、大湯沼、鬼煙火秀</td></tr>
+        <tr><td><span class="day-badge">Day 8</span><br/>8/19（三）</td><td>札幌→新千歲</td><td>JR 45分</td><td>機場拉麵道場、CI131 15:05返台</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tips-card">
+    <h3>💡 旅遊重點提示</h3>
+    <div class="tip-item"><span class="tip-icon">🎫</span><div><strong>交通券：</strong>建議購買北海道鐵路周遊券（5日），涵蓋旭川、登別特急，三人使用非常划算</div></div>
+    <div class="tip-item"><span class="tip-icon">⚾</span><div><strong>職棒門票：</strong>8/15（六）ES CON FIELD 週六主場，建議儘早在 hpfc.co.jp 購票</div></div>
+    <div class="tip-item"><span class="tip-icon">🏮</span><div><strong>お盆旺季：</strong>8/13–16 日本盂蘭盆節，景點人潮大，熱門拉麵店建議開門前排隊</div></div>
+    <div class="tip-item"><span class="tip-icon">🌽</span><div><strong>當季食材：</strong>8月北海道玉米、馬鈴薯、哈密瓜正當季，超市或路邊攤必試</div></div>
+    <div class="tip-item"><span class="tip-icon">👕</span><div><strong>穿搭：</strong>氣溫20–27°C，早晚涼，白天可達30°C，洋蔥式穿搭最適合</div></div>
+  </div>
+</div>
+
+<div class="view" id="day1">
+  <div class="day-header">
+    <div class="day-num">DAY 01 · 8月12日（三）</div>
+    <div class="day-title">札幌</div>
+    <div class="day-city-pill">🛬 新千歲機場 → 札幌</div>
+  </div>
+  <div class="timeline" id="tl-day1"></div>
+</div>
+
+<div class="view" id="day2">
+  <div class="day-header">
+    <div class="day-num">DAY 02 · 8月13日（四）</div>
+    <div class="day-title">小樽</div>
+    <div class="day-city-pill">🌊 小樽一日遊</div>
+  </div>
+  <div class="timeline" id="tl-day2"></div>
+</div>
+
+<div class="view" id="day3">
+  <div class="day-header">
+    <div class="day-num">DAY 03 · 8月14日（五）</div>
+    <div class="day-title">札幌</div>
+    <div class="day-city-pill">🏔️ 札幌深度遊</div>
+  </div>
+  <div class="timeline" id="tl-day3"></div>
+</div>
+
+<div class="view" id="day4">
+  <div class="day-header">
+    <div class="day-num">DAY 04 · 8月15日（六）</div>
+    <div class="day-title">札幌</div>
+    <div class="day-city-pill">⚾ 札幌深度遊</div>
+  </div>
+  <div class="timeline" id="tl-day4"></div>
+</div>
+
+<div class="view" id="day5">
+  <div class="day-header">
+    <div class="day-num">DAY 05 · 8月16日（日）</div>
+    <div class="day-title">札幌</div>
+    <div class="day-city-pill">🏛️ 市中心歷史漫遊</div>
+  </div>
+  <div class="timeline" id="tl-day5"></div>
+</div>
+
+<div class="view" id="day6">
+  <div class="day-header">
+    <div class="day-num">DAY 06 · 8月17日（一）</div>
+    <div class="day-title">旭川</div>
+    <div class="day-city-pill">🍜 旭川一日遊</div>
+  </div>
+  <div class="timeline" id="tl-day6"></div>
+</div>
+
+<div class="view" id="day7">
+  <div class="day-header">
+    <div class="day-num">DAY 07 · 8月18日（二）</div>
+    <div class="day-title">登別</div>
+    <div class="day-city-pill">🌋 登別一日遊</div>
+  </div>
+  <div class="timeline" id="tl-day7"></div>
+</div>
+
+<div class="view" id="day8">
+  <div class="day-header">
+    <div class="day-num">DAY 08 · 8月19日（三）</div>
+    <div class="day-title">札幌</div>
+    <div class="day-city-pill">✈ 新千歲 CI131 15:05</div>
+  </div>
+  <div class="timeline" id="tl-day8"></div>
+</div>
+
+</div>
+
+<script>
+// 城市名對應首個tab（同城市取最早那天）
+const cityTabMap = {
+  '札幌': 'day1',
+  '小樽': 'day2',
+  '旭川': 'day6',
+  '登別': 'day7',
+};
+
+function jumpToCity(city) {
+  const viewId = cityTabMap[city];
+  if (!viewId) return;
+  // 找到對應的 tab button
+  const tabs = document.querySelectorAll('.tab');
+  let targetBtn = null;
+  tabs.forEach(t => {
+    if (t.getAttribute('onclick') === "showView('" + viewId + "',this)") {
+      targetBtn = t;
+    }
+  });
+  if (targetBtn) showView(viewId, targetBtn);
+}
+
+function showView(id, btn) {
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+  // Scroll so the banner scrolls away and the sticky tab bar sits at top
+  const bannerH = document.querySelector('.banner').offsetHeight;
+  window.scrollTo({top: bannerH, behavior:'smooth'});
+}
+
+function buildTimeline(containerId, stops) {
+  const el = document.getElementById(containerId);
+  if (!el) return;
+  let stopNum = 0;
+  el.innerHTML = stops.map((s, i) => {
+    if (s.type === 'transport') {
+      return `<div class="stop transport">
+        <div class="stop-dot"></div>
+        <div class="stop-card transport-card">
+          <div class="stop-head">
+            <div class="stop-icon">${s.icon}</div>
+            <div class="stop-info">
+              <div class="stop-label" style="color:rgba(255,255,255,0.55)">${s.label}</div>
+              <div class="stop-name">${s.name}</div>
+            </div>
+          </div>
+        </div>
+      </div>`;
+    }
+    stopNum++;
+    const id = `stop-${containerId}-${i}`;
+    const tags = (s.tags||[]).map(t=>`<span class="tag ${t.type}">${t.text}</span>`).join('');
+    return `<div class="stop">
+      <div class="stop-dot">${stopNum}</div>
+      <div class="stop-card" id="${id}" onclick="toggleStop('${id}')">
+        <div class="stop-head">
+          <div class="stop-icon">${s.icon}</div>
+          <div class="stop-info">
+            <div class="stop-label">${s.label}</div>
+            <div class="stop-name">${s.name}</div>
+          </div>
+          <div class="stop-arrow">▼</div>
+        </div>
+        <div class="stop-body" id="body-${id}">
+          <div class="stop-body-inner">
+            <div class="tag-row">${tags}</div>
+            <p>${s.desc}</p>
+          </div>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function toggleStop(id) {
+  const card = document.getElementById(id);
+  const body = document.getElementById('body-' + id);
+  const open = card.classList.toggle('open');
+  body.classList.toggle('open', open);
+}
+
+const days = {
+  'tl-day1': [
+    {type:'transport', icon:'✈', label:'交通', name:'新千歲機場 → JR快速Airport（45分）→ JR札幌駅'},
+    {icon:'🛏️', label:'住宿 CHECK-IN', name:"Hotel ONE'S RESIDENCE", tags:[{type:'hotel',text:'公寓式飯店'},{type:'transport',text:'中島公園駅步行5分'}], desc:'搭地下鐵南北線至中島公園駅，步行約5分抵達飯店。放下行李稍作休息，再輕裝出發。飯店有小廚房、洗衣機，生活機能完整。'},
+    {icon:'🥩', label:'晚餐・必吃', name:'成吉思汗烤羊肉 だるま本店', tags:[{type:'food',text:'北海道名物'},{type:'food',text:'薄野'}], desc:'北海道最具代表性的烤肉！用特殊凸型鐵板烤羔羊肉，沾醬甘甜不羶。だるま本店是薄野最老牌名店，常年大排長龍，建議傍晚提早前往排隊。飯店步行約10分。'},
+    {icon:'🍺', label:'特殊活動', name:'大通公園啤酒花園', tags:[{type:'event',text:'8月限定'},{type:'event',text:'免費入場'}], desc:'約7月下旬～8月下旬舉辦，四大啤酒品牌（Sapporo、Asahi、Kirin、Suntory）各自設立露天攤位。青少年可喝飲料、吃北海道美食，夜晚燈光璀璨，人聲鼎沸。'},
+    {icon:'🗼', label:'景點', name:'大通公園 & 札幌電視塔', tags:[{type:'sight',text:'地標'},{type:'sight',text:'夜景'}], desc:'大通公園是市中心東西向的綠帶公園，長約1.5公里。公園東端的電視塔（高147.2公尺）展望台可俯瞰公園全景，夜景尤美。啤酒花園後順路散步。'},
+    {icon:'🏪', label:'景點・購物', name:'狸小路商店街', tags:[{type:'sight',text:'購物'},{type:'sight',text:'有屋頂・雨天OK'}], desc:'北海道最古老的商店街，全長約800公尺，有屋頂遮蔽，雨天也可逛。土産、藥妝、餐廳一應俱全，是回飯店路上的最佳順路購物地點。'},
+  ],
+  'tl-day2': [
+    {type:'transport', icon:'🚃', label:'交通', name:'JR 札幌駅 → JR函館本線快速（35分）→ JR 小樽駅｜建議08:00出發'},
+    {icon:'🐟', label:'早餐・必吃', name:'小樽三角市場 海鮮丼', tags:[{type:'food',text:'新鮮海鮮'},{type:'food',text:'JR小樽駅前1分'}], desc:'JR小樽駅出來即到。市場裡的食堂可自選新鮮海鮮組合成丼飯：海膽、鮭魚卵、甜蝦、螃蟹，新鮮度一流，是抵達小樽的第一站必吃。'},
+    {icon:'🛍️', label:'景點・購物', name:'堺町通り 商店街', tags:[{type:'sight',text:'購物'},{type:'sight',text:'伴手禮'}], desc:'小樽最熱鬧的購物街，玻璃工藝品、北海道牛奶甜點、音樂盒、海鮮等商家密集。從小樽駅步行約10分進入商店街，親子邊走邊吃邊買。'},
+    {icon:'🍰', label:'必吃・甜點', name:'LeTAO 本店', tags:[{type:'food',text:'雙層起司蛋糕'},{type:'food',text:'堺町通り'}], desc:'小樽最知名甜點品牌，雙層起司蛋糕（ドゥーブルフロマージュ）入口即化。本店在堺町通，二樓咖啡廳可欣賞街景，建議現場享用。'},
+    {icon:'🧁', label:'必吃・甜點', name:'北菓楼 kitakaro 本店', tags:[{type:'food',text:'現烤泡芙'},{type:'food',text:'年輪蛋糕'}], desc:'北海道著名菓子店，「夢不思議」泡芙、年輪蛋糕都是人氣商品。與LeTAO相距不遠，兩家連走，本店可享用現烤泡芙。'},
+    {icon:'🏮', label:'景點', name:'北一硝子 三號館', tags:[{type:'sight',text:'玻璃工藝'},{type:'sight',text:'DIY體驗'}], desc:'明治時代倉庫改建的玻璃工藝品店，內部有數百盞油燈燃燒，氣氛獨特而溫暖，也可體驗玻璃彩繪DIY。堺町通り末段，靠近小樽運河。'},
+    {icon:'🌊', label:'景點・壓軸', name:'小樽運河', tags:[{type:'sight',text:'地標'},{type:'sight',text:'傍晚點燈最美'}], desc:'建於1923年的磚造倉庫群與運河，是小樽最具代表性的景色。傍晚點燈後尤為浪漫，石板路沿途設有藝術品與咖啡廳。建議傍晚17:00前後在此拍照，再搭車返札。'},
+    {type:'transport', icon:'🚃', label:'交通', name:'JR 小樽駅 → JR 札幌駅（35分）→ 地下鐵 → 飯店｜建議17:00–18:00搭車'},
+  ],
+  'tl-day3': [
+    {type:'transport', icon:'🚇', label:'交通', name:'飯店 → 地下鐵東西線「円山公園駅」→ 步行15分 → 北海道神宮'},
+    {icon:'⛩️', label:'景點', name:'北海道神宮', tags:[{type:'sight',text:'祈福求籤'},{type:'sight',text:'圓山公園旁'}], desc:'札幌最重要的神社，位於圓山公園旁，綠蔭茂密。可祈福求籤，感受北海道神道氛圍。建議安排在上午前往，搭地下鐵東西線至円山公園駅步行約15分。'},
+    {type:'transport', icon:'🚇', label:'交通', name:'円山公園駅 → 地下鐵 → すすきの駅 → 市電「ロープウェイ入口駅」'},
+    {icon:'🍜', label:'午餐・必吃', name:'すみれ 札幌中山店 味噌拉麵', tags:[{type:'food',text:'札幌名物'},{type:'food',text:'お盆須排隊'}], desc:'札幌是日本味噌拉麵的發源地！すみれ是業界公認的頂級名店，濃厚味噌湯底、炒香蔬菜，無可取代。8月お盆期間極擁擠，建議開門前（11:00前）排隊。'},
+    {icon:'🏔️', label:'景點・壓軸', name:'藻岩山 夜景', tags:[{type:'sight',text:'日本新三大夜景'},{type:'sight',text:'纜車+迷你纜車'}], desc:'搭乘纜車＋迷你纜車雙層抵達標高531公尺山頂，日本新三大夜景之一。建議傍晚前往，日落後夜景震撼無比。市電「ロープウェイ入口駅」步行5分至山麓駅。'},
+    {icon:'🍶', label:'下午茶・必吃', name:'六花亭 大通公園本店', tags:[{type:'food',text:'奶油夾心餅乾'},{type:'food',text:'內用咖啡廳'}], desc:'北海道代表性菓子品牌，大通公園本店有可內用的咖啡廳。招牌マルセイバターサンド是必買伴手禮，下午茶時段順路前往。'},
+    {icon:'🌳', label:'景點', name:'中島公園 散步', tags:[{type:'sight',text:'飯店旁'},{type:'sight',text:'夏季音樂祭'}], desc:'市中心的大型公園，有小河、日本庭園、音樂廳等。8月有市民音樂祭、戶外活動，是傍晚回飯店前悠閒散步的好選擇。飯店步行可達。'},
+    {icon:'🌆', label:'晚餐', name:'薄野夜遊', tags:[{type:'sight',text:'北日本最大夜生活區'},{type:'food',text:'飯店步行10分'}], desc:'北日本最大的夜生活區，夜晚燈光璀璨，居酒屋、拉麵店、海鮮餐廳林立，很多餐廳全年齡皆可入座。'},
+  ],
+  'tl-day4': [
+    {type:'transport', icon:'🚌', label:'交通', name:'飯店 → 地下鐵東豊線「福住駅」→ 巴士 → 羊ヶ丘展望台'},
+    {icon:'🐑', label:'景點', name:'羊ヶ丘展望台', tags:[{type:'sight',text:'克拉克博士銅像'},{type:'sight',text:'薰衣草'}], desc:"著名的克拉克博士「Boys, Be Ambitious!」銅像所在地。眺望廣闊的牧羊草原與遠山，是札幌的經典打卡點，夏天開滿薰衣草。"},
+    {icon:'🍦', label:'必吃', name:'北海道牛奶霜淇淋', tags:[{type:'food',text:'展望台內賣店'}], desc:'使用北海道純正牛乳製成，濃郁奶香比一般霜淇淋更扎實綿密。羊ヶ丘展望台賣店即有販售，打卡後立刻吃最對味！'},
+    {icon:'🥩', label:'午餐・必吃', name:'HITSUJIGAOKA BBQ 露天烤肉', tags:[{type:'food',text:'羊肉・北海道蔬菜'},{type:'food',text:'展望台旁'}], desc:'可在展望台旁享受露天烤肉，使用北海道產蔬菜與羊肉，俯瞰美景同時品嚐戶外烤肉，是8月夏日旅行難得的體驗。'},
+    {type:'transport', icon:'🚌', label:'交通', name:'羊ヶ丘 → 巴士/計程車 → JR 北広島駅 → 步行10分 → ES CON FIELD'},
+    {icon:'⚾', label:'景點', name:'ES CON FIELD HOKKAIDO', tags:[{type:'sight',text:'2023年新球場'},{type:'sight',text:'可開合屋頂'}], desc:'北海道日本火腿鬥士隊的新主場，屋頂可開合，設計前衛，場內有各式北海道美食攤位，即便不看球賽也值得逛逛。'},
+    {icon:'🎉', label:'特殊活動', name:'NPB 職棒主場比賽', tags:[{type:'event',text:'需預購票'},{type:'event',text:'8/15週六主場'}], desc:'8月是日本職棒NPB熱季，週六主場比賽通常13:00或18:00開打。即便不熟悉棒球也能樂在其中，球場氣氛超棒！建議提前於官網 hpfc.co.jp 購票。'},
+    {type:'transport', icon:'🚃', label:'交通', name:'JR 北広島駅 → JR 札幌駅（15分）→ 地下鐵 → 飯店'},
+  ],
+  'tl-day5': [
+    {type:'transport', icon:'🚇', label:'交通', name:'飯店 → 地下鐵南北線「大通駅」（1站）'},
+    {icon:'🕰️', label:'景點', name:'札幌市時計台', tags:[{type:'sight',text:'1878年建造'},{type:'sight',text:'大通駅步行5分'}], desc:'1878年建造的農學校演武場，北海道開拓時代的象徵。雖被戲稱「日本三大失望景點之一」，但歷史意義深遠，周邊高樓包圍反而形成奇特趣味對比，值得順路一看。'},
+    {icon:'🧱', label:'景點', name:'北海道廳舊本廳舍（赤煉瓦）', tags:[{type:'sight',text:'免費入場'},{type:'sight',text:'時計台步行3分'}], desc:'建於1888年的紅磚廳舍，國家重要文化財。內部可免費參觀北海道歷史展，庭院也開放入場，是札幌最上鏡的歷史建築。'},
+    {icon:'🎉', label:'特殊活動', name:'さっぽろ夏まつり 大通公園', tags:[{type:'event',text:'整個8月'},{type:'event',text:'免費'}], desc:'大通公園整個8月都有各種慶典活動，啤酒花園、食物攤位，熱鬧非凡。赤煉瓦旁即可進入，路過必定順道逛逛。'},
+    {type:'transport', icon:'🚇', label:'交通', name:'大通駅 → さっぽろ駅（1站）→ 步行5分 → 北海道大學正門'},
+    {icon:'🌲', label:'景點', name:'北海道大學 校園散步', tags:[{type:'sight',text:'免費入場'},{type:'sight',text:'177公頃綠地'}], desc:'明治時代開設的百年名校，校園完全對外開放免費入場。銀杏大道、克拉克像、農學部附屬農場適合悠閒散步，是城市中難得的大片綠地。'},
+    {icon:'🦀', label:'午餐・必吃', name:'二条市場 海鮮', tags:[{type:'food',text:'活海膽'},{type:'food',text:'活螃蟹'}], desc:'距大通公園步行約5分的傳統市場，市場內食堂可吃到活海膽、活螃蟹蒸煮料理，海鮮新鮮、價格相對親民。'},
+    {icon:'🍣', label:'晚餐・必吃', name:'薄野 海鮮居酒屋', tags:[{type:'food',text:'磯魚 北のグルメ亭'},{type:'food',text:'魚一心'}], desc:'薄野一帶有眾多平價海鮮居酒屋，推薦「磯魚 北のグルメ亭」或「魚一心」，新鮮螃蟹、海膽、干貝，價格實惠。青少年可點特製餐點。飯店步行10分。'},
+  ],
+  'tl-day6': [
+    {type:'transport', icon:'🚃', label:'交通', name:'JR 札幌駅 → JR特急「カムイ/ライラック」（90分）→ JR 旭川駅｜建議08:00出發'},
+    {icon:'🛍️', label:'景點・購物', name:'買物公園 旭川步行商店街', tags:[{type:'sight',text:'日本第一步行天國'},{type:'sight',text:'旭川駅出站即進入'}], desc:'日本第一條步行者天國商店街（1972年開設），從旭川駅向南延伸。咖啡廳、拉麵店、地方名産商店林立，是從車站步行至旭橋的最佳路線。'},
+    {icon:'🌉', label:'景點', name:'旭川市旭橋', tags:[{type:'sight',text:'1932年建造'},{type:'sight',text:'石狩川上'}], desc:'建於1932年的優美拱橋，是旭川的象徵。早晨或黃昏步行此橋景色迷人，是旭川最佳拍照地之一。買物公園南端步行約15分。'},
+    {icon:'🍜', label:'午餐・必吃', name:'旭川拉麵 青葉本店 / 旭川ラーメン村', tags:[{type:'food',text:'醬油豚骨海鮮湯底'},{type:'food',text:'北海道三大拉麵'}], desc:'旭川與札幌（味噌）、函館（鹽味）並稱北海道三大拉麵，以「醬油豚骨海鮮雙湯底」為特色，麵條偏細、油脂厚重不膩。推薦「青葉本店」，或前往「旭川ラーメン村」可比較8家名店風味。'},
+    {icon:'🍺', label:'下午・必吃', name:'旭川啤酒工廠餐廳', tags:[{type:'food',text:'現釀地方啤酒'},{type:'food',text:'北海道和牛'}], desc:'可品嚐現釀的旭川地方啤酒搭配北海道和牛料理，成人必訪。青少年可飲無酒精特調飲料，市區搭計程車約10分。'},
+    {type:'transport', icon:'🚃', label:'交通', name:'JR 旭川駅 → JR特急（90分）→ JR 札幌駅 → 飯店｜建議17:00–18:00搭車'},
+  ],
+  'tl-day7': [
+    {type:'transport', icon:'🚃', label:'交通', name:'JR 札幌駅 → JR特急「すずらん/北斗」（70分）→ JR 登別駅 → 道南巴士（13分）→ 登別温泉'},
+    {icon:'👺', label:'景點・活動', name:'鬼の銅像 & 閻魔堂審判表演', tags:[{type:'sight',text:'溫泉街地標'},{type:'event',text:'免費表演'}], desc:'登別溫泉街的地標，閻羅王銅像與地獄主題裝飾遍佈街道。閻魔堂每日特定時段有機關表演，閻王大張其嘴、眼睛發光，老少咸宜。'},
+    {icon:'🌋', label:'景點・壓軸', name:'地獄谷（じごくだに）', tags:[{type:'sight',text:'免費入場'},{type:'sight',text:'直徑450公尺火口'}], desc:'登別最具代表性的奇觀，直徑約450公尺的爆裂火口遺跡，地面裂縫不斷噴出硫磺煙霧與沸騰泉水，如同地獄場景。步道環繞，免費入場，視覺衝擊感十足！'},
+    {icon:'💨', label:'景點', name:'大湯沼（おおゆぬま）', tags:[{type:'sight',text:'水溫約50°C'},{type:'sight',text:'地獄谷步行10分'}], desc:'直徑約130公尺的硫磺泉沼，水溫高達約50°C，沼面不停冒泡，從展望台俯瞰壯觀異常。步行棧道可近距離感受地熱，硫磺煙霧飄渺，宛如異世界。'},
+    {icon:'🦶', label:'體驗', name:'無料足湯', tags:[{type:'event',text:'免費'},{type:'sight',text:'夢元さぎり湯旁'}], desc:'溫泉街上有多處免費足湯，沿路悠閒泡腳，感受溫泉鄉氣氛。邊泡足湯邊欣賞溫泉街景色，是孩子和大人都喜歡的放鬆時刻。'},
+    {icon:'🍡', label:'必吃', name:'溫泉饅頭（温泉まんじゅう）', tags:[{type:'food',text:'現蒸約100日圓/個'},{type:'food',text:'溫泉街各店'}], desc:'登別溫泉必吃甜點，用溫泉水蒸製的黑色外皮饅頭，餡料香甜。溫泉街上多家販售，現蒸現吃，邊泡足湯邊吃最對味！'},
+    {icon:'🦀', label:'晚餐・必吃', name:'登別螃蟹料理', tags:[{type:'food',text:'松葉蟹・毛蟹'},{type:'food',text:'溫泉街餐廳'}], desc:'北海道知名螃蟹（松葉蟹、毛蟹）在登別溫泉街附近的海鮮餐廳可享用。若預算允許，點螃蟹定食作為旅程最後一頓豐盛晚餐。'},
+    {icon:'🎆', label:'特殊活動・壓軸', name:'地獄の谷の鬼花火 煙火秀', tags:[{type:'event',text:'免費'},{type:'event',text:'約20:00 & 21:00'}], desc:'每晚在登別温泉街舉行小型「鬼的煙火祭」表演，免費觀賞，8月份每晚皆有，約20:00、21:00各一場。晚餐後在街上等待即可欣賞，是完美的旅程句點！'},
+    {type:'transport', icon:'🚌', label:'交通', name:'温泉バスターミナル → JR 登別駅 → JR特急（70分）→ 札幌｜看完煙火約21:30搭巴士'},
+  ],
+  'tl-day8': [
+    {icon:'🏨', label:'退房', name:"Hotel ONE'S RESIDENCE 退房", tags:[{type:'hotel',text:'最晚11:30離開市區'}], desc:'CI131出發時間15:05，建議12:30前抵達新千歲機場。退房後行李可在大廳寄放，或直接帶往JR札幌駅寄存後再購物。最晚11:30–11:45搭上JR。'},
+    {icon:'🛍️', label:'購物', name:'JR タワーステラプレイス & 札幌駅地下街', tags:[{type:'sight',text:'JR札幌駅直結'},{type:'sight',text:'B1-B2食品區'}], desc:'JR札幌站地下連結多個大型商場，做最後的伴手禮採購。B1-B2食品區有白色戀人、六花亭、Royce巧克力等知名品牌，一次搞定所有土産。'},
+    {type:'transport', icon:'🚃', label:'交通', name:'JR 札幌駅 → JR快速Airport（45分）→ 新千歲機場｜最晚11:45出發'},
+    {icon:'🍜', label:'午餐・必吃', name:'新千歲空港 拉麵道場', tags:[{type:'food',text:'機場3F'},{type:'food',text:'10家名店'}], desc:'機場3F集結北海道各地10家知名拉麵，味噌、醬油、鹽味、海鮮全都有，是離開北海道前最後一碗麵的最佳選擇。各家排隊人潮多，建議抵達機場後立刻前往。'},
+    {icon:'🍫', label:'購物・必買', name:'新千歲機場免稅區 & 白色戀人旗艦店', tags:[{type:'food',text:'白色戀人'},{type:'food',text:'北海道牛奶霜淇淋'}], desc:'機場內購物區極豐富，有白色戀人工廠旗艦店（可現場品嚐）、北海道牛奶霜淇淋、各式土産。建議預留1.5–2小時在機場盡情採購最後的伴手禮。'},
+    {icon:'✈️', label:'出發', name:'華航 CI131 新千歲 15:05 → 台灣', tags:[{type:'transport',text:'建議13:30前完成報到'}], desc:'建議13:30前完成報到手續與通關，前往登機門。帶著滿滿的北海道回憶與行李箱的土産，期待再訪！'},
+  ],
+};
+
+Object.keys(days).forEach(id => buildTimeline(id, days[id]));
+</script>
+</body>
+</html>
