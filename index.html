@@ -50,12 +50,12 @@ html,body{width:100%;overflow-x:hidden;background:var(--cream);color:var(--text)
 .tabs{
   display:flex;
   flex-wrap:nowrap;
-  overflow:hidden;          /* 不滑動、不折行，直接等寬塞滿 */
+  overflow:hidden;
   padding:4px 4px 0;
   gap:1px;
 }
 .tab{
-  flex:1 1 0;               /* 9個tab等寬塞滿100% */
+  flex:1 1 0;
   min-width:0;
   padding:7px 2px 9px;
   font-size:11px;
@@ -199,6 +199,32 @@ html,body{width:100%;overflow-x:hidden;background:var(--cream);color:var(--text)
 html[lang="de"] .banner-title,
 html[lang="de"] .overview-hero h2,
 html[lang="de"] .day-title{font-family:'Noto Sans TC',sans-serif}
+
+@media (max-width: 640px){
+  .banner-content{padding:78px 24px 30px}
+  .lang-switch{top:22px;right:20px;border-radius:22px;padding:4px;background:rgba(255,255,255,0.14);box-shadow:0 8px 24px rgba(0,0,0,0.14)}
+  .lang-btn{font-size:13px;padding:7px 13px;border-radius:18px}
+  .banner-eyebrow{max-width:250px;line-height:1.7;margin-bottom:14px}
+  .banner-title{font-size:clamp(38px,12vw,54px);line-height:1.12}
+  .banner-sub{font-size:15px;line-height:1.55}
+  .banner-pills{gap:10px;margin-top:20px}
+  .pill{min-width:122px;padding:8px 18px;border-radius:26px}
+  .pill-ja{font-size:17px}
+  .pill-en{font-size:11px}
+  .tabs-wrapper{position:sticky;top:0}
+  .tabs{flex-wrap:wrap;overflow:visible;gap:3px;padding:5px}
+  .tab{flex:1 0 calc(20% - 3px);min-width:0;padding:8px 2px 9px;border-bottom-width:3px;border-radius:7px 7px 0 0;line-height:1.18}
+  .tab-day{font-size:11px;letter-spacing:0.2px;white-space:nowrap}
+  .tab-city{font-size:12px;line-height:1.12;max-width:100%;overflow:hidden;text-overflow:ellipsis}
+}
+
+@media (max-width: 360px){
+  .tab{flex-basis:calc(25% - 3px)}
+}
+
+@media (min-width: 641px){
+  .tab{min-height:56px}
+}
 </style>
   <!-- Favicon & PWA Icons -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0id2hpdGUiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSIzMCIgZmlsbD0iI0JDMDAyRCIvPjwvc3ZnPg=="/>
@@ -410,8 +436,8 @@ let currentLang = 'zh';
 
 const de = {
   '中文':'中文','日本':'Japan','北海道':'Hokkaido','8日遊':'8 Tage','2026年8月12日(三) — 8月19日(三)':'12. August 2026 (Mi) - 19. August 2026 (Mi)',
-  '札幌':'Sapporo','小樽':'Otaru','富良野':'Furano','登別':'Noboribetsu','總覽':'Übersicht','全部':'Alle','行程':'Route',
-  '第1天':'Tag 1','第2天':'Tag 2','第3天':'Tag 3','第4天':'Tag 4','第5天':'Tag 5','第6天':'Tag 6','第7天':'Tag 7','第8天':'Tag 8',
+  '札幌':'Sapporo','小樽':'Otaru','富良野':'Furano','登別':'Noboribetsu','總覽':'Plan','全部':'Alle','行程':'Route',
+  '第1天':'Tag\u00a01','第2天':'Tag\u00a02','第3天':'Tag\u00a03','第4天':'Tag\u00a04','第5天':'Tag\u00a05','第6天':'Tag\u00a06','第7天':'Tag\u00a07','第8天':'Tag\u00a08',
   '2026年8月北海道旅遊':'Hokkaido-Reise im August 2026',
   '以札幌為基地，每日放射狀出遊。8月北海道氣溫約20–27°C，恰逢薰衣草季末、啤酒花園旺季，全程7晚住同一飯店，省去搬行李的煩惱。':'Sapporo bleibt die feste Basis, von dort aus gehen die Tagesausflüge sternförmig los. Im August liegen die Temperaturen in Hokkaido meist bei 20-27 °C; es ist das Ende der Lavendelsaison und Hochsaison der Biergärten. Alle 7 Nächte bleiben im selben Hotel, damit kein ständiges Kofferpacken nötig ist.',
   '✈ 去程':'✈ Hinflug','✈ 回程':'✈ Rückflug','8/12（三）抵達新千歲 13:35':'12.08. (Mi) Ankunft New Chitose 13:35','8/19（三）新千歲出發 15:05':'19.08. (Mi) Abflug New Chitose 15:05',
