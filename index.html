@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 <title>日本北海道8日遊</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@700;900&display=swap" rel="stylesheet"/>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -29,7 +29,7 @@ html,body{width:100%;overflow-x:hidden;background:var(--cream);color:var(--text)
 .banner-bg{position:absolute;inset:0;pointer-events:none}
 .banner-content{position:relative;z-index:2;padding:38px 24px 30px}
 .banner-eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-light);margin-bottom:10px;font-weight:500}
-.banner-title{font-family:'Playfair Display',serif;font-size:clamp(30px,6vw,54px);font-weight:900;line-height:1.1;letter-spacing:-0.5px;color:#fff}
+.banner-title{font-family:'Noto Serif TC',serif;font-size:clamp(30px,6vw,54px);font-weight:900;line-height:1.12;letter-spacing:0;color:#fff}
 .banner-title span{color:var(--gold-light)}
 .banner-sub{margin-top:14px;font-size:14px;color:rgba(255,255,255,0.78);line-height:1.85}
 .banner-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
@@ -82,7 +82,7 @@ html,body{width:100%;overflow-x:hidden;background:var(--cream);color:var(--text)
 
 /* ── OVERVIEW HERO ── */
 .overview-hero{background:linear-gradient(150deg,#0d1b38 0%,var(--navy) 60%,var(--navy-accent) 100%);border-radius:16px;padding:28px;color:#fff;margin-bottom:24px}
-.overview-hero h2{font-family:'Playfair Display',serif;font-size:23px;margin-bottom:7px}
+.overview-hero h2{font-family:'Noto Serif TC',serif;font-size:23px;font-weight:900;letter-spacing:0;margin-bottom:7px}
 .overview-hero p{font-size:15px;opacity:0.85;line-height:1.75}
 
 /* ── INFO GRID ── */
@@ -115,7 +115,7 @@ html,body{width:100%;overflow-x:hidden;background:var(--cream);color:var(--text)
 .day-header{background:linear-gradient(150deg,#0d1b38 0%,var(--navy) 60%,var(--navy-accent) 100%);border-radius:16px;padding:26px;color:#fff;margin-bottom:28px;position:relative;overflow:hidden}
 .day-header::after{content:'';position:absolute;right:-20px;top:-20px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,0.04)}
 .day-num{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-light);margin-bottom:6px;font-weight:600}
-.day-title{font-family:'Playfair Display',serif;font-size:27px;font-weight:900;line-height:1.1}
+.day-title{font-family:'Noto Serif TC',serif;font-size:27px;font-weight:900;line-height:1.18;letter-spacing:0}
 .day-city-pill{display:inline-block;background:var(--red);border-radius:20px;padding:5px 16px;font-size:13px;margin-top:12px;font-weight:500}
 
 /* ── TIMELINE ── */
@@ -227,7 +227,7 @@ html,body{width:100%;overflow-x:hidden;background:var(--cream);color:var(--text)
     <div class="banner-pills">
       <button class="pill red" onclick="jumpToCity('札幌')"><span class="pill-ja">札幌</span><span class="pill-en">Sapporo</span></button>
       <button class="pill" onclick="jumpToCity('小樽')"><span class="pill-ja">小樽</span><span class="pill-en">Otaru</span></button>
-      <button class="pill" onclick="jumpToCity('旭川')"><span class="pill-ja">旭川*</span><span class="pill-en">Asahikawa</span></button>
+      <button class="pill" onclick="jumpToCity('富良野')"><span class="pill-ja">富良野</span><span class="pill-en">Furano</span></button>
       <button class="pill" onclick="jumpToCity('登別')"><span class="pill-ja">登別</span><span class="pill-en">Noboribetsu</span></button>
     </div>
   </div>
@@ -241,7 +241,7 @@ html,body{width:100%;overflow-x:hidden;background:var(--cream);color:var(--text)
     <button class="tab" onclick="showView('day3',this)"><span class="tab-day">第3天<br>8/14</span><span class="tab-city">札幌</span></button>
     <button class="tab" onclick="showView('day4',this)"><span class="tab-day">第4天<br>8/15</span><span class="tab-city">札幌</span></button>
     <button class="tab" onclick="showView('day5',this)"><span class="tab-day">第5天<br>8/16</span><span class="tab-city">札幌</span></button>
-    <button class="tab" onclick="showView('day6',this)"><span class="tab-day">第6天<br>8/17</span><span class="tab-city">旭川</span></button>
+    <button class="tab" onclick="showView('day6',this)"><span class="tab-day">第6天<br>8/17</span><span class="tab-city">富良野</span></button>
     <button class="tab" onclick="showView('day7',this)"><span class="tab-day">第7天<br>8/18</span><span class="tab-city">登別</span></button>
     <button class="tab" onclick="showView('day8',this)"><span class="tab-day">第8天<br>8/19</span><span class="tab-city">札幌</span></button>
   </div>
@@ -301,10 +301,10 @@ html,body{width:100%;overflow-x:hidden;background:var(--cream);color:var(--text)
       <tbody>
         <tr><td><span class="day-badge">Day 1</span><br/>8/12（三）</td><td>新千歲→札幌</td><td>JR 45分</td><td>大通公園啤酒花園、成吉思汗烤羊肉</td></tr>
         <tr><td><span class="day-badge">Day 2</span><br/>8/13（四）</td><td>小樽</td><td>JR 35分</td><td>小樽運河、LeTAO起司蛋糕、海鮮丼</td></tr>
-        <tr><td><span class="day-badge">Day 3</span><br/>8/14（五）</td><td>札幌南區</td><td>市電・地鐵</td><td>藻岩山夜景、北海道神宮、味噌拉麵</td></tr>
-        <tr><td><span class="day-badge">Day 4</span><br/>8/15（六）</td><td>札幌外圍</td><td>巴士・JR</td><td>羊ヶ丘展望台、ES CON FIELD 職棒</td></tr>
-        <tr><td><span class="day-badge">Day 5</span><br/>8/16（日）</td><td>札幌市中心</td><td>地鐵・步行</td><td>北大校園、赤煉瓦廳、薄野海鮮</td></tr>
-        <tr><td><span class="day-badge">Day 6</span><br/>8/17（一）</td><td>旭川</td><td>JR特急 90分</td><td>旭川拉麵、旭橋、買物公園</td></tr>
+        <tr><td><span class="day-badge">Day 3</span><br/>8/14（五）</td><td>札幌南區</td><td>地鐵・巴士・市電</td><td>札幌藝術之森、味噌拉麵、藻岩山夜景</td></tr>
+        <tr><td><span class="day-badge">Day 4</span><br/>8/15（六）</td><td>札幌外圍</td><td>JR・巴士</td><td>北海道開拓の村、ES CON FIELD 職棒</td></tr>
+        <tr><td><span class="day-badge">Day 5</span><br/>8/16（日）</td><td>札幌市中心</td><td>地鐵・巴士・步行</td><td>莫埃來沼公園、GARAKU湯咖哩、赤煉瓦廳、北海盆踊り</td></tr>
+        <tr><td><span class="day-badge">Day 6</span><br/>8/17（一）</td><td>美瑛・富良野・旭川</td><td>JR特急+富良野線</td><td>四季彩之丘花田、羊駝、旭川拉麵</td></tr>
         <tr><td><span class="day-badge">Day 7</span><br/>8/18（二）</td><td>登別</td><td>JR特急 70分</td><td>地獄谷、大湯沼、鬼煙火秀</td></tr>
         <tr><td><span class="day-badge">Day 8</span><br/>8/19（三）</td><td>札幌→新千歲</td><td>JR 45分</td><td>機場拉麵道場、CI131 15:05返台</td></tr>
       </tbody>
@@ -313,7 +313,7 @@ html,body{width:100%;overflow-x:hidden;background:var(--cream);color:var(--text)
   <div class="tips-card">
     <h3>💡 旅遊重點提示</h3>
     <div class="tip-item"><span class="tip-icon">🎫</span><div><strong>交通券：</strong>建議購買北海道鐵路周遊券（5日），涵蓋旭川、登別特急，三人使用非常划算</div></div>
-    <div class="tip-item"><span class="tip-icon">⚾</span><div><strong>職棒門票：</strong>8/15（六）ES CON FIELD 週六主場，建議儘早在 hpfc.co.jp 購票</div></div>
+    <div class="tip-item"><span class="tip-icon">⚾</span><div><strong>職棒門票：</strong>8/15（六）若 ES CON FIELD 有主場比賽，建議儘早在 hpfc.co.jp 購票；若無比賽可改球場參觀與晚餐</div></div>
     <div class="tip-item"><span class="tip-icon">🏮</span><div><strong>お盆旺季：</strong>8/13–16 日本盂蘭盆節，景點人潮大，熱門拉麵店建議開門前排隊</div></div>
     <div class="tip-item"><span class="tip-icon">🌽</span><div><strong>當季食材：</strong>8月北海道玉米、馬鈴薯、哈密瓜正當季，超市或路邊攤必試</div></div>
     <div class="tip-item"><span class="tip-icon">👕</span><div><strong>穿搭：</strong>氣溫20–27°C，早晚涼，白天可達30°C，洋蔥式穿搭最適合</div></div>
@@ -323,8 +323,8 @@ html,body{width:100%;overflow-x:hidden;background:var(--cream);color:var(--text)
 <div class="view" id="day1">
   <div class="day-header">
     <div class="day-num">DAY 01 · 8月12日（三）</div>
-    <div class="day-title">札幌</div>
-    <div class="day-city-pill">🛬 新千歲機場 → 札幌</div>
+    <div class="day-title">札幌<br/>大通公園・狸小路</div>
+    <div class="day-city-pill">🛬 新千歲機場 13:35 → 札幌</div>
   </div>
   <div class="timeline" id="tl-day1"></div>
 </div>
@@ -332,7 +332,7 @@ html,body{width:100%;overflow-x:hidden;background:var(--cream);color:var(--text)
 <div class="view" id="day2">
   <div class="day-header">
     <div class="day-num">DAY 02 · 8月13日（四）</div>
-    <div class="day-title">小樽</div>
+    <div class="day-title">小樽<br/>運河・海鮮</div>
     <div class="day-city-pill">🌊 小樽一日遊</div>
   </div>
   <div class="timeline" id="tl-day2"></div>
@@ -341,8 +341,8 @@ html,body{width:100%;overflow-x:hidden;background:var(--cream);color:var(--text)
 <div class="view" id="day3">
   <div class="day-header">
     <div class="day-num">DAY 03 · 8月14日（五）</div>
-    <div class="day-title">札幌</div>
-    <div class="day-city-pill">🏔️ 札幌深度遊</div>
+    <div class="day-title">札幌<br/>味噌拉麵・藻岩山</div>
+    <div class="day-city-pill">🏔️ 札幌拉麵</div>
   </div>
   <div class="timeline" id="tl-day3"></div>
 </div>
@@ -350,8 +350,8 @@ html,body{width:100%;overflow-x:hidden;background:var(--cream);color:var(--text)
 <div class="view" id="day4">
   <div class="day-header">
     <div class="day-num">DAY 04 · 8月15日（六）</div>
-    <div class="day-title">札幌</div>
-    <div class="day-city-pill">⚾ 札幌深度遊</div>
+    <div class="day-title">札幌<br/>北海道開拓の村・日本職棒</div>
+    <div class="day-city-pill">⚾ 北海道火腿武士隊</div>
   </div>
   <div class="timeline" id="tl-day4"></div>
 </div>
@@ -359,8 +359,8 @@ html,body{width:100%;overflow-x:hidden;background:var(--cream);color:var(--text)
 <div class="view" id="day5">
   <div class="day-header">
     <div class="day-num">DAY 05 · 8月16日（日）</div>
-    <div class="day-title">札幌</div>
-    <div class="day-city-pill">🏛️ 市中心歷史漫遊</div>
+    <div class="day-title">札幌<br/>北海盆踊り・莫埃來沼公園</div>
+    <div class="day-city-pill">🏛️ 日本盂蘭盆節</div>
   </div>
   <div class="timeline" id="tl-day5"></div>
 </div>
@@ -368,8 +368,8 @@ html,body{width:100%;overflow-x:hidden;background:var(--cream);color:var(--text)
 <div class="view" id="day6">
   <div class="day-header">
     <div class="day-num">DAY 06 · 8月17日（一）</div>
-    <div class="day-title">旭川</div>
-    <div class="day-city-pill">🍜 旭川一日遊</div>
+    <div class="day-title">富良野・美瑛<br/>四季彩之丘・旭川拉麵</div>
+    <div class="day-city-pill">🌸 美瑛・富良野一日遊</div>
   </div>
   <div class="timeline" id="tl-day6"></div>
 </div>
@@ -377,7 +377,7 @@ html,body{width:100%;overflow-x:hidden;background:var(--cream);color:var(--text)
 <div class="view" id="day7">
   <div class="day-header">
     <div class="day-num">DAY 07 · 8月18日（二）</div>
-    <div class="day-title">登別</div>
+    <div class="day-title">登別<br/>火山溫泉・地獄谷</div>
     <div class="day-city-pill">🌋 登別一日遊</div>
   </div>
   <div class="timeline" id="tl-day7"></div>
@@ -386,7 +386,7 @@ html,body{width:100%;overflow-x:hidden;background:var(--cream);color:var(--text)
 <div class="view" id="day8">
   <div class="day-header">
     <div class="day-num">DAY 08 · 8月19日（三）</div>
-    <div class="day-title">札幌</div>
+    <div class="day-title">札幌<br/>購物・新千歲拉麵道場</div>
     <div class="day-city-pill">✈ 新千歲 CI131 15:05</div>
   </div>
   <div class="timeline" id="tl-day8"></div>
@@ -399,7 +399,7 @@ html,body{width:100%;overflow-x:hidden;background:var(--cream);color:var(--text)
 const cityTabMap = {
   '札幌': 'day1',
   '小樽': 'day2',
-  '旭川': 'day6',
+  '富良野': 'day6',
   '登別': 'day7',
 };
 
@@ -480,7 +480,7 @@ function toggleStop(id) {
 
 const days = {
   'tl-day1': [
-    {type:'transport', icon:'✈', label:'交通', name:'新千歲機場 → JR快速Airport（45分）→ JR札幌駅'},
+    {type:'transport', icon:'✈', label:'交通', name:'新千歲機場 → JR快速Airport（約45分）→ JR札幌駅'},
     {icon:'🛏️', label:'住宿 CHECK-IN', name:"Hotel ONE'S RESIDENCE", tags:[{type:'hotel',text:'公寓式飯店'},{type:'transport',text:'中島公園駅步行5分'}], desc:'搭地下鐵南北線至中島公園駅，步行約5分抵達飯店。放下行李稍作休息，再輕裝出發。飯店有小廚房、洗衣機，生活機能完整。'},
     {icon:'🥩', label:'晚餐・必吃', name:'成吉思汗烤羊肉 だるま本店', tags:[{type:'food',text:'北海道名物'},{type:'food',text:'薄野'}], desc:'北海道最具代表性的烤肉！用特殊凸型鐵板烤羔羊肉，沾醬甘甜不羶。だるま本店是薄野最老牌名店，常年大排長龍，建議傍晚提早前往排隊。飯店步行約10分。'},
     {icon:'🍺', label:'特殊活動', name:'大通公園啤酒花園', tags:[{type:'event',text:'8月限定'},{type:'event',text:'免費入場'}], desc:'約7月下旬～8月下旬舉辦，四大啤酒品牌（Sapporo、Asahi、Kirin、Suntory）各自設立露天攤位。青少年可喝飲料、吃北海道美食，夜晚燈光璀璨，人聲鼎沸。'},
@@ -498,42 +498,46 @@ const days = {
     {type:'transport', icon:'🚃', label:'交通', name:'JR 小樽駅 → JR 札幌駅（35分）→ 地下鐵 → 飯店｜建議17:00–18:00搭車'},
   ],
   'tl-day3': [
-    {type:'transport', icon:'🚇', label:'交通', name:'飯店 → 地下鐵東西線「円山公園駅」→ 步行15分 → 北海道神宮'},
-    {icon:'⛩️', label:'景點', name:'北海道神宮', tags:[{type:'sight',text:'祈福求籤'},{type:'sight',text:'圓山公園旁'}], desc:'札幌最重要的神社，位於圓山公園旁，綠蔭茂密。可祈福求籤，感受北海道神道氛圍。建議安排在上午前往，搭地下鐵東西線至円山公園駅步行約15分。'},
-    {type:'transport', icon:'🚇', label:'交通', name:'円山公園駅 → 地下鐵 → すすきの駅 → 市電「ロープウェイ入口駅」'},
-    {icon:'🍜', label:'午餐・必吃', name:'すみれ 札幌中山店 味噌拉麵', tags:[{type:'food',text:'札幌名物'},{type:'food',text:'お盆須排隊'}], desc:'札幌是日本味噌拉麵的發源地！すみれ是業界公認的頂級名店，濃厚味噌湯底、炒香蔬菜，無可取代。8月お盆期間極擁擠，建議開門前（11:00前）排隊。'},
-    {icon:'🏔️', label:'景點・壓軸', name:'藻岩山 夜景', tags:[{type:'sight',text:'日本新三大夜景'},{type:'sight',text:'纜車+迷你纜車'}], desc:'搭乘纜車＋迷你纜車雙層抵達標高531公尺山頂，日本新三大夜景之一。建議傍晚前往，日落後夜景震撼無比。市電「ロープウェイ入口駅」步行5分至山麓駅。'},
-    {icon:'🍶', label:'下午茶・必吃', name:'六花亭 大通公園本店', tags:[{type:'food',text:'奶油夾心餅乾'},{type:'food',text:'內用咖啡廳'}], desc:'北海道代表性菓子品牌，大通公園本店有可內用的咖啡廳。招牌マルセイバターサンド是必買伴手禮，下午茶時段順路前往。'},
-    {icon:'🌳', label:'景點', name:'中島公園 散步', tags:[{type:'sight',text:'飯店旁'},{type:'sight',text:'夏季音樂祭'}], desc:'市中心的大型公園，有小河、日本庭園、音樂廳等。8月有市民音樂祭、戶外活動，是傍晚回飯店前悠閒散步的好選擇。飯店步行可達。'},
-    {icon:'🌆', label:'晚餐', name:'薄野夜遊', tags:[{type:'sight',text:'北日本最大夜生活區'},{type:'food',text:'飯店步行10分'}], desc:'北日本最大的夜生活區，夜晚燈光璀璨，居酒屋、拉麵店、海鮮餐廳林立，很多餐廳全年齡皆可入座。'},
+    {type:'transport', icon:'🚇', label:'交通', name:'飯店 → 地下鐵南北線「中島公園駅」→「真駒内駅」（終點，約12分）→ 中央バス2番乗り場 →「芸術の森入口」（約15分）下車'},
+    {icon:'🎨', label:'景點', name:'札幌藝術之森（札幌芸術の森）', tags:[{type:'sight',text:'野外美術館'},{type:'sight',text:'約2小時'},{type:'sight',text:'雕塑×自然'}], desc:'坐落於札幌南區丘陵地帶的大型綜合藝術文化設施，最大亮點是廣達40公頃的「野外美術館」，74件國內外雕塑作品散落在自然林間草地中，漫步其中猶如走進戶外藝術展。夏季（6–8月）開放至17:30，建議參觀約2小時。入場費：野外美術館大人700日圓、高中生280日圓。中央巴士約15分間隔發車，注意回程班次時刻。'},
+    {type:'transport', icon:'🚌', label:'交通', name:'芸術の森センター → 中央バス（約15分）→「真駒内駅」→ 地下鐵南北線（約10分）→「すすきの駅」'},
+    {icon:'🍜', label:'午餐・必吃', name:'すみれ 札幌すすきの店 味噌拉麵', tags:[{type:'food',text:'札幌名物'},{type:'food',text:'お盆須排隊'}], desc:'札幌是日本味噌拉麵的發源地！すみれ是業界公認的頂級名店，濃厚味噌湯底、炒香蔬菜，無可取代。8月お盆期間極擁擠，建議開門前（11:00前）排隊或早到等候。位於薄野附近，藝術之森返回後直接前往。'},
+    {icon:'🍶', label:'甜點・必吃', name:'六花亭 札幌本店', tags:[{type:'food',text:'奶油夾心餅乾'},{type:'food',text:'內用咖啡廳'}], desc:'北海道代表性菓子品牌，札幌本店有可內用的咖啡廳，招牌マルセイバターサンド是必買伴手禮。若在藻岩山夜景前來下午茶，或買盒伴手禮帶回飯店。'},
+    {type:'transport', icon:'🚋', label:'交通', name:'六花亭札幌本店 → 步行約8分至「西4丁目」停留所 → 市電外回り（約20–25分）→「ロープウェイ入口」停留所 → 免費シャトルバス（約5分）or 步行約8分 → 藻岩山麓駅'},
+    {icon:'🏔️', label:'景點・壓軸', name:'藻岩山 夜景', tags:[{type:'sight',text:'日本新三大夜景'},{type:'sight',text:'纜車+迷你纜車'},{type:'sight',text:'夏季10:30–22:00'}], desc:'搭乘纜車＋迷你纜車雙層抵達標高531公尺山頂，日本新三大夜景之一。建議傍晚前往，日落後夜景震撼無比。纜車+ミニケーブルカー往復大人2,100日圓、小學生以下1,050日圓。市電「ロープウェイ入口」停留所旁有免費接駁巴士每15分一班，或步行約8分至山麓駅。'},
   ],
   'tl-day4': [
-    {type:'transport', icon:'🚌', label:'交通', name:'飯店 → 地下鐵東豊線「福住駅」→ 巴士 → 羊ヶ丘展望台'},
-    {icon:'🐑', label:'景點', name:'羊ヶ丘展望台', tags:[{type:'sight',text:'克拉克博士銅像'},{type:'sight',text:'薰衣草'}], desc:"著名的克拉克博士「Boys, Be Ambitious!」銅像所在地。眺望廣闊的牧羊草原與遠山，是札幌的經典打卡點，夏天開滿薰衣草。"},
-    {icon:'🍦', label:'必吃', name:'北海道牛奶霜淇淋', tags:[{type:'food',text:'展望台內賣店'}], desc:'使用北海道純正牛乳製成，濃郁奶香比一般霜淇淋更扎實綿密。羊ヶ丘展望台賣店即有販售，打卡後立刻吃最對味！'},
-    {icon:'🥩', label:'午餐・必吃', name:'HITSUJIGAOKA BBQ 露天烤肉', tags:[{type:'food',text:'羊肉・北海道蔬菜'},{type:'food',text:'展望台旁'}], desc:'可在展望台旁享受露天烤肉，使用北海道產蔬菜與羊肉，俯瞰美景同時品嚐戶外烤肉，是8月夏日旅行難得的體驗。'},
-    {type:'transport', icon:'🚌', label:'交通', name:'羊ヶ丘 → 巴士/計程車 → JR 北広島駅 → 步行10分 → ES CON FIELD'},
-    {icon:'⚾', label:'景點', name:'ES CON FIELD HOKKAIDO', tags:[{type:'sight',text:'2023年新球場'},{type:'sight',text:'可開合屋頂'}], desc:'北海道日本火腿鬥士隊的新主場，屋頂可開合，設計前衛，場內有各式北海道美食攤位，即便不看球賽也值得逛逛。'},
-    {icon:'🎉', label:'特殊活動', name:'NPB 職棒主場比賽', tags:[{type:'event',text:'需預購票'},{type:'event',text:'8/15週六主場'}], desc:'8月是日本職棒NPB熱季，週六主場比賽通常13:00或18:00開打。即便不熟悉棒球也能樂在其中，球場氣氛超棒！建議提前於官網 hpfc.co.jp 購票。'},
-    {type:'transport', icon:'🚃', label:'交通', name:'JR 北広島駅 → JR 札幌駅（15分）→ 地下鐵 → 飯店'},
+    {type:'transport', icon:'🚃', label:'交通', name:'飯店 → 地下鐵南北線「中島公園駅」→「さっぽろ駅」→ JR札幌駅 → JR千歲線（約8分）→「新札幌駅」→ JR北海道バス「新22」（約15分）→「開拓の村」'},
+    {icon:'🏘️', label:'景點', name:'北海道開拓の村', tags:[{type:'sight',text:'戶外博物館'},{type:'sight',text:'約2–3小時'},{type:'sight',text:'夏季馬車'}], desc:'在廣大的原野中重建了明治～昭和初期北海道各地建築物的大型戶外博物館，佔地54公頃，超過52棟歷史建築物從各地移址保存於此，包括農家、漁村、商家、官廳等，完整重現了北海道開拓時代的生活樣貌。夏季（9–17時）有馬車可以搭乘，走進建築物內還有志工穿著傳統服裝解說。門票：大人800日圓，高中生600日圓。JR北海道バス新22，約1小時2班。'},
+    {type:'transport', icon:'🚌', label:'交通', name:'開拓の村 → JR北海道バス「新22」（約15分）→ 新札幌駅 → JR千歲線（約10–15分）→ JR北広島駅 → 步行約20分或接駁巴士 → ES CON FIELD'},
+    {icon:'⚾', label:'景點', name:'北海道日本火腿鬥士隊 ES CON FIELD', tags:[{type:'sight',text:'2023年新球場'},{type:'sight',text:'可開合屋頂'}], desc:'北海道日本火腿鬥士隊的新主場，屋頂可開合，設計前衛，場內有各式北海道美食攤位，即便不看球賽也值得逛逛。'},
+    {icon:'🎉', label:'特殊活動', name:'北海道日本火腿鬥士隊主場比賽', tags:[{type:'event',text:'需預購票'},{type:'event',text:'8/15週六主場'}], desc:'8月是日本職棒NPB熱季，週六主場比賽通常13:00或18:00開打。即便不熟悉棒球也能樂在其中，球場氣氛超棒！建議提前於官網 hpfc.co.jp 購票。'},
+    {type:'transport', icon:'🚃', label:'交通', name:'ES CON FIELD → 步行或接駁巴士 → JR北広島駅 → JR千歳線（約15分）→ JR札幌駅 → 地下鐵南北線（さっぽろ→中島公園，約5分）→ 飯店'},
+    {icon:'🍣', label:'晚餐・必吃', name:'薄野 海鮮居酒屋', tags:[{type:'food',text:'磯魚 北のグルメ亭'},{type:'food',text:'魚一心'}], desc:'薄野一帶有眾多平價海鮮居酒屋，推薦「磯魚 北のグルメ亭」或「魚一心」，新鮮螃蟹、海膽、干貝，價格實惠。青少年可點特製餐點。飯店步行約10分。'},
   ],
   'tl-day5': [
-    {type:'transport', icon:'🚇', label:'交通', name:'飯店 → 地下鐵南北線「大通駅」（1站）'},
+    {type:'transport', icon:'🚇', label:'交通', name:'飯店 → 地下鐵南北線「中島公園駅」→「大通駅」→ 東豊線換乘 →「環状通東駅」（約8分）→ 中央バス東69/東79（約25分）→「モエレ沼公園東口」下車｜建議09:00出發'},
+    {icon:'🗿', label:'景點', name:'莫埃來沼公園（モエレ沼公園）', tags:[{type:'sight',text:'伊薩姆·野口設計'},{type:'sight',text:'約1–2小時'},{type:'sight',text:'免費入場'}], desc:'由日裔美籍世界級雕塑家伊薩姆·野口（Isamu Noguchi）以「將整座公園打造成一件雕塑作品」為理念所設計，1982年動工，2005年全面開放。佔地約188.8公頃，入場完全免費。園內最具代表性的是玻璃金字塔「HIDAMARI」、直徑48公尺的海之噴水（定時噴發），以及可登頂俯瞰全園的「モエレ山（海拔62公尺人工山）」。租借園內自行車（200日圓/2小時）是最有效率的遊覽方式。注意：巴士班次約1小時2班，回程請提前確認時刻。'},
+    {type:'transport', icon:'🚌', label:'交通', name:'モエレ沼公園東口 → 中央バス東69/東79（約25分）→「環状通東駅」→ 地下鐵東豊線（約8分）→「大通駅」→ 步行約5分 → GARAKU湯咖哩本店'},
+    {icon:'🍛', label:'午餐・必吃', name:'GARAKU 湯咖哩本店', tags:[{type:'food',text:'札幌湯咖哩'},{type:'food',text:'大通・薄野之間'},{type:'food',text:'お盆須排隊'}], desc:'札幌湯咖哩人氣名店，本店位於南2条西2丁目一帶，從大通站或薄野站步行都很方便。招牌是香料層次濃、蔬菜份量足的湯咖哩，可依喜好選辣度與飯量。8月お盆期間容易排隊，從莫埃來沼公園回市區後建議直接前往。'},
     {icon:'🕰️', label:'景點', name:'札幌市時計台', tags:[{type:'sight',text:'1878年建造'},{type:'sight',text:'大通駅步行5分'}], desc:'1878年建造的農學校演武場，北海道開拓時代的象徵。雖被戲稱「日本三大失望景點之一」，但歷史意義深遠，周邊高樓包圍反而形成奇特趣味對比，值得順路一看。'},
     {icon:'🧱', label:'景點', name:'北海道廳舊本廳舍（赤煉瓦）', tags:[{type:'sight',text:'免費入場'},{type:'sight',text:'時計台步行3分'}], desc:'建於1888年的紅磚廳舍，國家重要文化財。內部可免費參觀北海道歷史展，庭院也開放入場，是札幌最上鏡的歷史建築。'},
-    {icon:'🎉', label:'特殊活動', name:'さっぽろ夏まつり 大通公園', tags:[{type:'event',text:'整個8月'},{type:'event',text:'免費'}], desc:'大通公園整個8月都有各種慶典活動，啤酒花園、食物攤位，熱鬧非凡。赤煉瓦旁即可進入，路過必定順道逛逛。'},
-    {type:'transport', icon:'🚇', label:'交通', name:'大通駅 → さっぽろ駅（1站）→ 步行5分 → 北海道大學正門'},
-    {icon:'🌲', label:'景點', name:'北海道大學 校園散步', tags:[{type:'sight',text:'免費入場'},{type:'sight',text:'177公頃綠地'}], desc:'明治時代開設的百年名校，校園完全對外開放免費入場。銀杏大道、克拉克像、農學部附屬農場適合悠閒散步，是城市中難得的大片綠地。'},
-    {icon:'🦀', label:'午餐・必吃', name:'二条市場 海鮮', tags:[{type:'food',text:'活海膽'},{type:'food',text:'活螃蟹'}], desc:'距大通公園步行約5分的傳統市場，市場內食堂可吃到活海膽、活螃蟹蒸煮料理，海鮮新鮮、價格相對親民。'},
-    {icon:'🍣', label:'晚餐・必吃', name:'薄野 海鮮居酒屋', tags:[{type:'food',text:'磯魚 北のグルメ亭'},{type:'food',text:'魚一心'}], desc:'薄野一帶有眾多平價海鮮居酒屋，推薦「磯魚 北のグルメ亭」或「魚一心」，新鮮螃蟹、海膽、干貝，價格實惠。青少年可點特製餐點。飯店步行10分。'},
+    {type:'transport', icon:'🚇', label:'交通', name:'赤煉瓦前 → 步行3分 →「大通駅」→ 地下鐵東西線（約10分）→「円山公園駅」→ 步行約15分 → 北海道神宮'},
+    {icon:'⛩️', label:'景點', name:'北海道神宮', tags:[{type:'sight',text:'祈福求籤'},{type:'sight',text:'圓山公園旁'}], desc:'札幌最重要的神社，位於圓山公園旁，綠蔭茂密。可祈福求籤，感受北海道神道氛圍。神宮內有境內攤位，可順路嚐嚐現烤「判官樣」紅豆年糕（限定甜點，附免費奉茶）。'},
+    {type:'transport', icon:'🚇', label:'交通', name:'北海道神宮 → 步行約15分 →「円山公園駅」→ 地下鐵東西線（約6分）→「大通駅」'},
+    {icon:'🎉', label:'特殊活動', name:'北海盆踊り (Hokkaido Bon Odori Festival)', tags:[{type:'event',text:'北海盆唄'},{type:'event',text:'太鼓'}], desc:'從大通公園 2 丁目進入，現場會搭起巨大的木製高台（櫓），太鼓手在上方擊鼓，市民與遊客身穿浴衣圍成數圈隨著《北海盆唄》起舞。強烈建議全家一起走入隊伍中跟著跳，這是日本夏天最震撼、最有人情味的文化體驗。'},
+    {type:'transport', icon:'🚇', label:'回程', name:'大通公園 → 步行或地下鐵南北線（1站）→「中島公園駅」→ 步行5分 → 飯店'},
   ],
   'tl-day6': [
-    {type:'transport', icon:'🚃', label:'交通', name:'JR 札幌駅 → JR特急「カムイ/ライラック」（90分）→ JR 旭川駅｜建議08:00出發'},
-    {icon:'🛍️', label:'景點・購物', name:'買物公園 旭川步行商店街', tags:[{type:'sight',text:'日本第一步行天國'},{type:'sight',text:'旭川駅出站即進入'}], desc:'日本第一條步行者天國商店街（1972年開設），從旭川駅向南延伸。咖啡廳、拉麵店、地方名産商店林立，是從車站步行至旭橋的最佳路線。'},
-    {icon:'🌉', label:'景點', name:'旭川市旭橋', tags:[{type:'sight',text:'1932年建造'},{type:'sight',text:'石狩川上'}], desc:'建於1932年的優美拱橋，是旭川的象徵。早晨或黃昏步行此橋景色迷人，是旭川最佳拍照地之一。買物公園南端步行約15分。'},
-    {icon:'🍜', label:'午餐・必吃', name:'旭川拉麵 青葉本店 / 旭川ラーメン村', tags:[{type:'food',text:'醬油豚骨海鮮湯底'},{type:'food',text:'北海道三大拉麵'}], desc:'旭川與札幌（味噌）、函館（鹽味）並稱北海道三大拉麵，以「醬油豚骨海鮮雙湯底」為特色，麵條偏細、油脂厚重不膩。推薦「青葉本店」，或前往「旭川ラーメン村」可比較8家名店風味。'},
-    {icon:'🍺', label:'下午・必吃', name:'旭川啤酒工廠餐廳', tags:[{type:'food',text:'現釀地方啤酒'},{type:'food',text:'北海道和牛'}], desc:'可品嚐現釀的旭川地方啤酒搭配北海道和牛料理，成人必訪。青少年可飲無酒精特調飲料，市區搭計程車約10分。'},
-    {type:'transport', icon:'🚃', label:'交通', name:'JR 旭川駅 → JR特急（90分）→ JR 札幌駅 → 飯店｜建議17:00–18:00搭車'},
+    {type:'transport', icon:'🚃', label:'交通', name:'JR 札幌駅 → JR特急「カムイ/ライラック」（約90分）→ JR 旭川駅｜建議08:00出發'},
+    {type:'transport', icon:'🚃', label:'交通', name:'JR 旭川駅 → JR富良野線（約45分）→ 美馬牛駅｜約09:30換乘'},
+    {type:'transport', icon:'🚶', label:'交通', name:'美馬牛駅 → 步行約20–25分（或站前計程車約5分/700–800日圓）→ 四季彩之丘'},
+    {icon:'🌸', label:'景點・壓軸', name:'四季彩之丘（展望花畑 四季彩の丘）', tags:[{type:'sight',text:'彩色花毯丘陵'},{type:'sight',text:'7–9月入場800日圓'},{type:'sight',text:'約3–4小時'}], desc:'位於美瑛丘陵上、佔地7公頃（東京巨蛋約3個）的北海道代表性花園。每年4月下旬至10月下旬，約30種草花依序盛開，從高處望去，紅、黃、紫、粉的花田像一條條彩虹地毯鋪滿山丘，遠方是十勝岳連峰的雄偉輪廓，景色令人屏息。8月正值向日葵、薰衣草、百日草等同時盛開的黃金期。出站後步行約20–25分鐘抵達，沿途已能感受美瑛丘陵的開闊氣息。園內可搭乘拖拉機觀光車「四季彩ノロッコ號」悠閒巡遊，也有4人乘高爾夫球車可自由行駛。另設有可愛的羊駝牧場（通年開放），餵食體驗深受青少年喜愛。午餐可在園內餐廳品嚐北海道湯咖哩與現炸馬鈴薯可樂餅。夏季（7–9月）入場費：高中生以上800日圓，中小學生500日圓，乘車另計。營業時間：6–9月 8:40–17:30。'},
+    {icon:'🥔', label:'午餐・必吃', name:'四季彩之丘 園內餐廳・美食', tags:[{type:'food',text:'北海道湯咖哩'},{type:'food',text:'現炸馬鈴薯可樂餅'}], desc:'園內設有餐廳與小吃攤，推薦使用美瑛產新鮮馬鈴薯製成的現炸可樂餅（約200日圓），以及北海道風味的湯咖哩。邊眺望花田邊用餐，是難忘的旅行體驗。農産品直賣所也有玉米、哈密瓜等當季食材可購買。'},
+    {type:'transport', icon:'🚃', label:'交通', name:'美馬牛駅 → JR富良野線（約45分）→ JR 旭川駅｜約15:00–15:30搭車'},
+    {icon:'🛍️', label:'景點・散步', name:'旭川市中心・買物公園', tags:[{type:'sight',text:'日本第一步行天國'},{type:'sight',text:'旭川駅出站即進入'}], desc:'從旭川駅步行即可進入日本第一條步行者天國商店街「買物公園」，兩側有咖啡廳、伴手禮店，適合飯前輕鬆逛街，感受旭川的在地氛圍，預留約1小時悠閒散步。'},
+    {icon:'🍜', label:'晚餐・必吃', name:'旭川醬油拉麵 青葉本店 / 旭川ラーメン村', tags:[{type:'food',text:'醬油豚骨海鮮湯底'},{type:'food',text:'北海道三大拉麵'}], desc:'旭川與札幌（味噌）、函館（鹽味）並稱北海道三大拉麵，以「醬油豚骨海鮮雙湯底」為特色。豚骨與海鮮熬製的湯底鮮醇濃厚，細捲麵吸附湯汁極佳。推薦老字號「青葉本店」，或前往「旭川ラーメン村」一次比較8家名店，約19:00–20:00用餐最不需排隊。'},
+    {type:'transport', icon:'🚃', label:'交通', name:'JR 旭川駅 → JR特急（約90分）→ JR 札幌駅 → 飯店｜約20:00–20:30搭車，約22:00返飯店'},
   ],
   'tl-day7': [
     {type:'transport', icon:'🚃', label:'交通', name:'JR 札幌駅 → JR特急「すずらん/北斗」（70分）→ JR 登別駅 → 道南巴士（13分）→ 登別温泉'},
