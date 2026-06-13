@@ -122,7 +122,7 @@ html,body{width:100%;overflow-x:hidden;background:var(--cream);color:var(--text)
 .timeline{display:flex;flex-direction:column;gap:10px;position:relative;padding-left:0}
 .timeline::before{
   content:'';position:absolute;
-  left:10px;
+  left:13px;
   top:0;bottom:0;
   width:2px;
   background:linear-gradient(to bottom,var(--navy-accent),var(--navy));
@@ -131,27 +131,33 @@ html,body{width:100%;overflow-x:hidden;background:var(--cream);color:var(--text)
 }
 .stop{
   display:grid;
-  grid-template-columns:22px 1fr;
+  grid-template-columns:28px 1fr;
   align-items:start;
   gap:10px;
   position:relative;
   z-index:1;
 }
 .stop-dot{
-  width:22px;height:22px;border-radius:50%;
+  width:28px;height:28px;border-radius:50%;
   background:var(--navy);
   color:#fff;
   border:none;
   display:flex;align-items:center;justify-content:center;
-  font-size:10px;font-weight:700;
+  font-size:13px;font-weight:700;
   flex-shrink:0;
-  margin-top:12px;
+  margin-top:10px;
   z-index:2;
+  cursor:pointer;
+  transition:background 0.18s,transform 0.15s;
+  user-select:none;
 }
+.stop-dot:hover{background:var(--navy-accent);transform:scale(1.12)}
 .stop.transport .stop-dot{
   background:var(--navy-accent);
-  width:14px;height:14px;margin-top:17px;margin-left:4px;
+  width:14px;height:14px;margin-top:17px;margin-left:7px;
+  cursor:default;
 }
+.stop.transport .stop-dot:hover{transform:none}
 .stop.transport .stop-dot::after{display:none}
 .stop-card{background:var(--white);border-radius:12px;box-shadow:var(--shadow);overflow:hidden;cursor:pointer;transition:box-shadow 0.2s,transform 0.15s}
 .stop-card:hover{box-shadow:0 4px 24px rgba(26,39,68,0.14);transform:translateY(-1px)}
@@ -245,7 +251,26 @@ html,body{width:100%;overflow-x:hidden;background:var(--cream);color:var(--text)
 
 <div class="view active" id="overview">
   <div class="overview-hero">
-    <h2>🗾 2026年8月北海道旅遊</h2>
+    <h2 style="display:flex;align-items:center;gap:10px"><svg width="48" height="56" viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;flex-shrink:0;margin-right:4px">
+  <path d="M28 22 L18 118 L102 118 L92 22 Z" fill="#c8a84b"/>
+  <path d="M31 42 L19.5 116 L100.5 116 L89 42 Z" fill="#9a6e08" opacity="0.55"/>
+  <path d="M92 46 Q116 46 116 72 Q116 98 92 98" fill="none" stroke="#c8a84b" stroke-width="8" stroke-linecap="round"/>
+  <path d="M92 58 Q108 58 108 72 Q108 86 92 86" fill="none" stroke="#a87d10" stroke-width="4" stroke-linecap="round" opacity="0.55"/>
+  <ellipse cx="60" cy="26" rx="32" ry="9" fill="white" opacity="0.95"/>
+  <circle cx="33" cy="21" r="10" fill="white" opacity="0.9"/>
+  <circle cx="46" cy="14" r="13" fill="white" opacity="0.95"/>
+  <circle cx="61" cy="11" r="15" fill="white" opacity="0.97"/>
+  <circle cx="77" cy="14" r="12" fill="white" opacity="0.95"/>
+  <circle cx="90" cy="21" r="9" fill="white" opacity="0.9"/>
+  <circle cx="46" cy="12" r="5" fill="white" opacity="0.4"/>
+  <circle cx="62" cy="9" r="6" fill="white" opacity="0.38"/>
+  <path d="M38 48 L26 108" stroke="rgba(255,255,255,0.18)" stroke-width="5" stroke-linecap="round"/>
+  <path d="M47 47 L37 108" stroke="rgba(255,255,255,0.08)" stroke-width="3" stroke-linecap="round"/>
+  <line x1="28" y1="60" x2="92" y2="60" stroke="rgba(255,255,255,0.28)" stroke-width="0.8"/>
+  <line x1="28" y1="84" x2="92" y2="84" stroke="rgba(255,255,255,0.28)" stroke-width="0.8"/>
+  <text x="60" y="76" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="700" letter-spacing="3.5" fill="rgba(255,255,255,0.85)">SAPPORO</text>
+  <text x="60" y="96" text-anchor="middle" font-family="Georgia,serif" font-size="9" letter-spacing="2" fill="rgba(255,255,255,0.5)">✦ BEER ✦</text>
+</svg><span>2026年8月北海道旅遊</span></h2>
     <p>以札幌為基地，每日放射狀出遊。8月北海道氣溫約20–27°C，恰逢薰衣草季末、啤酒花園旺季，全程7晚住同一飯店，省去搬行李的煩惱。</p>
   </div>
   <div class="info-grid">
@@ -425,7 +450,7 @@ function buildTimeline(containerId, stops) {
     const id = `stop-${containerId}-${i}`;
     const tags = (s.tags||[]).map(t=>`<span class="tag ${t.type}">${t.text}</span>`).join('');
     return `<div class="stop">
-      <div class="stop-dot">${stopNum}</div>
+      <div class="stop-dot" onclick="toggleStop('${id}')">${stopNum}</div>
       <div class="stop-card" id="${id}" onclick="toggleStop('${id}')">
         <div class="stop-head">
           <div class="stop-icon">${s.icon}</div>
