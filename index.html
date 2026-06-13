@@ -225,10 +225,10 @@ html,body{width:100%;overflow-x:hidden;background:var(--cream);color:var(--text)
     <div class="banner-title">日本<span>北海道</span>8日遊</span></div>
     <div class="banner-sub">2026年8月12日(三) — 8月19日(三)</div>
     <div class="banner-pills">
-      <button class="pill red" onclick="jumpToCity('札幌')"><span class="pill-ja">札幌</span><span class="pill-en">Sapporo</span></button>
-      <button class="pill" onclick="jumpToCity('小樽')"><span class="pill-ja">小樽</span><span class="pill-en">Otaru</span></button>
-      <button class="pill" onclick="jumpToCity('富良野')"><span class="pill-ja">富良野</span><span class="pill-en">Furano</span></button>
-      <button class="pill" onclick="jumpToCity('登別')"><span class="pill-ja">登別</span><span class="pill-en">Noboribetsu</span></button>
+      <button class="pill red" data-city="札幌" onclick="jumpToCity('札幌')"><span class="pill-ja">札幌</span><span class="pill-en">Sapporo</span></button>
+      <button class="pill" data-city="小樽" onclick="jumpToCity('小樽')"><span class="pill-ja">小樽</span><span class="pill-en">Otaru</span></button>
+      <button class="pill" data-city="富良野" onclick="jumpToCity('富良野')"><span class="pill-ja">富良野</span><span class="pill-en">Furano</span></button>
+      <button class="pill" data-city="登別" onclick="jumpToCity('登別')"><span class="pill-ja">登別</span><span class="pill-en">Noboribetsu</span></button>
     </div>
   </div>
 </div>
@@ -417,11 +417,20 @@ function jumpToCity(city) {
   if (targetBtn) showView(viewId, targetBtn);
 }
 
+function setActiveCity(city) {
+  const cityButtons = document.querySelectorAll('.banner-pills .pill');
+  cityButtons.forEach(pill => {
+    pill.classList.toggle('red', pill.dataset.city === city);
+  });
+}
+
 function showView(id, btn) {
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   btn.classList.add('active');
+  const city = btn.querySelector('.tab-city')?.textContent.trim();
+  if (city && cityTabMap[city]) setActiveCity(city);
   // Scroll so the banner scrolls away and the sticky tab bar sits at top
   const bannerH = document.querySelector('.banner').offsetHeight;
   window.scrollTo({top: bannerH, behavior:'smooth'});
