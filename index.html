@@ -207,19 +207,16 @@ html[lang="de"] .day-title{font-family:'Noto Sans TC',sans-serif}
   .banner-eyebrow{max-width:250px;line-height:1.7;margin-bottom:14px}
   .banner-title{font-size:clamp(38px,12vw,54px);line-height:1.12}
   .banner-sub{font-size:15px;line-height:1.55}
-  .banner-pills{gap:10px;margin-top:20px}
-  .pill{min-width:122px;padding:8px 18px;border-radius:26px}
-  .pill-ja{font-size:17px}
+  .banner-pills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:20px}
+  .pill{width:100%;min-width:0;padding:8px 10px;border-radius:26px}
+  .pill-ja{font-size:16px;white-space:nowrap}
   .pill-en{font-size:11px}
   .tabs-wrapper{position:sticky;top:0}
-  .tabs{flex-wrap:wrap;overflow:visible;gap:3px;padding:5px}
-  .tab{flex:1 0 calc(20% - 3px);min-width:0;padding:8px 2px 9px;border-bottom-width:3px;border-radius:7px 7px 0 0;line-height:1.18}
+  .tabs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));overflow:visible;gap:3px;padding:5px}
+  .tab{min-width:0;width:100%;padding:8px 2px 9px;border-bottom-width:3px;border-radius:7px 7px 0 0;line-height:1.18}
   .tab-day{font-size:11px;letter-spacing:0.2px;white-space:nowrap}
   .tab-city{font-size:12px;line-height:1.12;max-width:100%;overflow:hidden;text-overflow:ellipsis}
-}
-
-@media (max-width: 360px){
-  .tab{flex-basis:calc(25% - 3px)}
+  html[lang="de"] .tab-city{font-size:11.5px}
 }
 
 @media (min-width: 641px){
@@ -435,7 +432,7 @@ html[lang="de"] .day-title{font-family:'Noto Sans TC',sans-serif}
 let currentLang = 'zh';
 
 const de = {
-  '中文':'中文','日本':'Japan','北海道':'Hokkaido','8日遊':'8 Tage','2026年8月12日(三) — 8月19日(三)':'12. August 2026 (Mi) - 19. August 2026 (Mi)',
+  '中文':'中文','日本':'Japan ','北海道':'Hokkaido ','8日遊':'8 Tage','2026年8月12日(三) — 8月19日(三)':'12. August 2026 (Mi) - 19. August 2026 (Mi)',
   '札幌':'Sapporo','小樽':'Otaru','富良野':'Furano','登別':'Noboribetsu','總覽':'Plan','全部':'Alle','行程':'Route',
   '第1天':'Tag\u00a01','第2天':'Tag\u00a02','第3天':'Tag\u00a03','第4天':'Tag\u00a04','第5天':'Tag\u00a05','第6天':'Tag\u00a06','第7天':'Tag\u00a07','第8天':'Tag\u00a08',
   '2026年8月北海道旅遊':'Hokkaido-Reise im August 2026',
