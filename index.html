@@ -115,6 +115,23 @@ html,body{width:100%;overflow-x:hidden;background:var(--cream);color:var(--text)
 .tip-item:last-child{border:none}
 .tip-icon{flex-shrink:0;font-size:16px;margin-top:1px}
 
+/* ── LOCAL SHOPPING ── */
+.shopping-card{background:var(--white);border-radius:12px;padding:20px;box-shadow:var(--shadow);margin-top:24px}
+.shopping-card h3{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:14px;display:flex;align-items:center;gap:6px}
+.shopping-item{display:grid;grid-template-columns:132px minmax(0,1fr);gap:18px;padding:16px;border:1px solid var(--border);border-radius:12px;background:#fbfcfe}
+.shopping-thumb{width:132px;height:132px;border-radius:10px;object-fit:cover;object-position:center 45%;box-shadow:0 2px 10px rgba(26,39,68,0.12)}
+.shopping-info{min-width:0}
+.shopping-name{font-size:17px;font-weight:700;color:var(--navy);line-height:1.35}
+.shopping-ja{font-size:12.5px;color:var(--text-light);margin-top:2px;line-height:1.5}
+.shopping-desc{font-size:14px;line-height:1.75;color:#374151;margin-top:9px}
+.shopping-meta{display:grid;gap:6px;margin-top:10px;font-size:13px;line-height:1.6}
+.shopping-meta-row{display:grid;grid-template-columns:78px minmax(0,1fr);gap:7px}
+.shopping-meta-label{font-weight:700;color:var(--navy)}
+.shopping-note{font-size:11.5px;color:var(--text-light);margin-top:10px}
+.shopping-links{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
+.shopping-link{display:inline-flex;align-items:center;border-radius:20px;padding:4px 11px;background:#e6ecf5;color:var(--navy);font-size:11.5px;font-weight:700;text-decoration:none}
+.shopping-link:hover{background:#d9e3f1}
+
 /* ── DAY HEADER ── */
 .day-header{background:linear-gradient(150deg,#0d1b38 0%,var(--navy) 60%,var(--navy-accent) 100%);border-radius:16px;padding:26px;color:#fff;margin-bottom:28px;position:relative;overflow:hidden}
 .day-header::after{content:'';position:absolute;right:-20px;top:-20px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,0.04)}
@@ -218,6 +235,10 @@ html[lang="de"] .day-title{font-family:'Noto Sans TC',sans-serif}
   .tab-day{font-size:11px;letter-spacing:0.2px;white-space:nowrap}
   .tab-city{font-size:12px;line-height:1.12;max-width:100%;overflow:hidden;text-overflow:ellipsis}
   html[lang="de"] .tab-city{font-size:11.5px}
+  .shopping-item{grid-template-columns:92px minmax(0,1fr);gap:12px;padding:12px}
+  .shopping-thumb{width:92px;height:112px}
+  .shopping-name{font-size:15px}
+  .shopping-meta-row{grid-template-columns:1fr;gap:0}
 }
 
 @media (min-width: 641px){
@@ -353,6 +374,26 @@ html[lang="de"] .day-title{font-family:'Noto Sans TC',sans-serif}
     <div class="tip-item"><span class="tip-icon">🌽</span><div><strong>當季食材：</strong>8月北海道玉米、馬鈴薯、哈密瓜正當季，超市或路邊攤必試</div></div>
     <div class="tip-item"><span class="tip-icon">👕</span><div><strong>穿搭：</strong>氣溫20–27°C，早晚涼，白天可達30°C，洋蔥式穿搭最適合</div></div>
   </div>
+  <div class="shopping-card">
+    <h3>🛍️ 當地購物</h3>
+    <article class="shopping-item">
+      <img class="shopping-thumb" src="assets/shopping/horinishi.png" alt="アウトドアスパイス ほりにし 100g" loading="lazy"/>
+      <div class="shopping-info">
+        <div class="shopping-name">Horinishi 萬用戶外香料</div>
+        <div class="shopping-ja" lang="ja">アウトドアスパイス ほりにし（100g・原味）</div>
+        <p class="shopping-desc">日本人氣萬用調味料，混合 20 種以上香料與調味料，以鹽、醬油和蒜香為主調。只要撒上去就能替雞肉、豬肉、魚、蔬菜、炒飯或露營料理提味。</p>
+        <div class="shopping-meta">
+          <div class="shopping-meta-row"><span class="shopping-meta-label">可能購買店家</span><span>KALDI Coffee Farm、Bic Camera 札幌店、Alpen Outdoors 札幌發寒店</span></div>
+          <div class="shopping-meta-row"><span class="shopping-meta-label">參考價格</span><span>約 ¥842–864／100g</span></div>
+        </div>
+        <div class="shopping-links">
+          <a class="shopping-link" href="https://www.kaldi.co.jp/ec/pro/disp/1/4580504111106?sFlg=2" target="_blank" rel="noopener">KALDI 商品資訊 ↗</a>
+          <a class="shopping-link" href="https://store.alpen-group.jp/f/dsg-115669-" target="_blank" rel="noopener">Alpen 商品資訊 ↗</a>
+        </div>
+        <p class="shopping-note">價格與各分店庫存可能變動，購買前請再確認。</p>
+      </div>
+    </article>
+  </div>
 </div>
 
 <div class="view" id="day1">
@@ -454,6 +495,17 @@ const de = {
   'お盆旺季：':'Obon-Hochsaison: ','8/13–16 日本盂蘭盆節，景點人潮大，熱門拉麵店建議開門前排隊':'13.-16.08. ist Obon in Japan. Sehenswürdigkeiten sind voll; bei beliebten Ramenläden am besten vor Öffnung anstehen.',
   '當季食材：':'Saisonale Zutaten: ','8月北海道玉米、馬鈴薯、哈密瓜正當季，超市或路邊攤必試':'Im August haben Mais, Kartoffeln und Melonen in Hokkaido Saison. Unbedingt im Supermarkt oder an Ständen probieren.',
   '穿搭：':'Kleidung: ','氣溫20–27°C，早晚涼，白天可達30°C，洋蔥式穿搭最適合':'20-27 °C, morgens und abends kühler, tagsüber teils bis 30 °C. Schichten sind am praktischsten.',
+  '🛍️ 當地購物':'🛍️ Einkaufen vor Ort',
+  'Horinishi 萬用戶外香料':'Horinishi Universal-Gewürz',
+  'アウトドアスパイス ほりにし（100g・原味）':'Outdoor Spice Horinishi (100 g, Original)',
+  '日本人氣萬用調味料，混合 20 種以上香料與調味料，以鹽、醬油和蒜香為主調。只要撒上去就能替雞肉、豬肉、魚、蔬菜、炒飯或露營料理提味。':'Beliebte japanische Allzweck-Gewürzmischung aus über 20 Gewürzen und Würzmitteln mit Salz, Sojasauce und Knoblauch. Einfach darüberstreuen: passt zu Huhn, Schwein, Fisch, Gemüse, gebratenem Reis und Campinggerichten.',
+  '可能購買店家':'Mögliche Geschäfte',
+  'KALDI Coffee Farm、Bic Camera 札幌店、Alpen Outdoors 札幌發寒店':'KALDI Coffee Farm, Bic Camera Sapporo und Alpen Outdoors Sapporo Hassamu',
+  '參考價格':'Richtpreis',
+  '約 ¥842–864／100g':'ca. ¥842-864 / 100 g',
+  'KALDI 商品資訊 ↗':'KALDI Produktinfo ↗',
+  'Alpen 商品資訊 ↗':'Alpen Produktinfo ↗',
+  '價格與各分店庫存可能變動，購買前請再確認。':'Preise und Filialbestände können sich ändern; bitte vor dem Kauf prüfen.',
   '大通公園・狸小路':'Odori Park und Tanukikoji','新千歲機場 13:35 → 札幌':'New Chitose Airport 13:35 -> Sapporo','運河・海鮮':'Kanal und Seafood','小樽一日遊':'Tagesausflug nach Otaru','味噌拉麵・藻岩山':'Miso-Ramen und Mt. Moiwa','札幌拉麵':'Sapporo-Ramen','北海道開拓の村・日本職棒':'Historical Village und Baseball','北海道火腿鬥士隊':'Hokkaido Fighters','北海盆踊り・莫埃來沼公園':'Hokkai Bon Odori und Moerenuma Park','日本盂蘭盆節':'Japanisches Obon-Fest','富良野・美瑛':'Furano und Biei','四季彩之丘・旭川拉麵':'Shikisai-no-Oka und Asahikawa-Ramen','美瑛・富良野一日遊':'Tagesausflug nach Biei und Furano','火山溫泉・地獄谷':'Vulkanische Quellen und Jigokudani','登別一日遊':'Tagesausflug nach Noboribetsu','購物・新千歲拉麵道場':'Shopping und New Chitose Ramen Dojo','新千歲 CI131 15:05':'New Chitose CI131 15:05',
   '住宿 CHECK-IN':'Unterkunft Check-in','晚餐・必吃':'Abendessen, Empfehlung','特殊活動':'Besonderes Event','景點':'Sehenswürdigkeit','景點・購物':'Sehenswürdigkeit und Shopping','早餐・必吃':'Frühstück, Empfehlung','必吃・甜點':'Dessert, Empfehlung','景點・壓軸':'Höhepunkt','午餐・必吃':'Mittagessen, Empfehlung','甜點・必吃':'Dessert, Empfehlung','特殊活動・壓軸':'Event-Höhepunkt','景點・散步':'Spaziergang','購物':'Shopping','出發':'Abflug','退房':'Check-out','回程':'Rückweg','必吃':'Empfehlung','體驗':'Erlebnis',
   '公寓式飯店':'Apartment-Hotel','中島公園駅步行5分':'5 Min. zu Fuß von Nakajima-koen Station','北海道名物':'Hokkaido-Spezialität','薄野':'Susukino','8月限定':'nur im August','免費入場':'Eintritt frei','地標':'Wahrzeichen','夜景':'Nachtblick','購物':'Shopping','有屋頂・雨天OK':'überdacht, regentauglich','新鮮海鮮':'frisches Seafood','JR小樽駅前1分':'1 Min. vor JR Otaru Station','伴手禮':'Souvenirs','雙層起司蛋糕':'Double Fromage Cheesecake','堺町通り':'Sakaimachi-dori','現烤泡芙':'frische Windbeutel','年輪蛋糕':'Baumkuchen','玻璃工藝':'Glaskunst','DIY體驗':'DIY-Erlebnis','傍晚點燈最美':'abends mit Beleuchtung am schönsten','野外美術館':'Freilichtmuseum','約2小時':'ca. 2 Std.','雕塑×自然':'Skulptur und Natur','札幌名物':'Sapporo-Spezialität','お盆須排隊':'Obon: Wartezeit einplanen','奶油夾心餅乾':'Butter-Sand-Kekse','內用咖啡廳':'Café vor Ort','日本新三大夜景':'eine der neuen Top-3-Nachtansichten Japans','纜車+迷你纜車':'Seilbahn + Mini Cable Car','夏季10:30–22:00':'Sommer 10:30-22:00','戶外博物館':'Freilichtmuseum','約2–3小時':'ca. 2-3 Std.','夏季馬車':'Sommerkutsche','2023年新球場':'neues Stadion von 2023','可開合屋頂':'bewegliches Dach','需預購票':'Tickets vorher kaufen','8/13週四主場':'13.08. Donnerstag Heimspiel','16:00入場':'Einlass 16:00','18:00開打':'Spielbeginn 18:00','伊薩姆·野口設計':'Design von Isamu Noguchi','約1–2小時':'ca. 1-2 Std.','札幌湯咖哩':'Sapporo Soup Curry','大通・薄野之間':'zwischen Odori und Susukino','1878年建造':'erbaut 1878','大通駅步行5分':'5 Min. zu Fuß von Odori Station','免費入場':'Eintritt frei','時計台步行3分':'3 Min. vom Clock Tower','祈福求籤':'Beten und Omikuji','圓山公園旁':'neben Maruyama Park','北海盆唄':'Hokkai Bon Uta','太鼓':'Taiko-Trommeln','彩色花毯丘陵':'bunte Blumenteppich-Hügel','7–9月入場800日圓':'Juli-Sept. Eintritt 800 Yen','約3–4小時':'ca. 3-4 Std.','北海道湯咖哩':'Hokkaido Soup Curry','現炸馬鈴薯可樂餅':'frische Kartoffel-Kroketten','日本第一步行天國':'Japans erste Fußgängerzone','旭川駅出站即進入':'direkt ab Asahikawa Station','醬油豚骨海鮮湯底':'Shoyu-Brühe mit Schwein und Seafood','北海道三大拉麵':'eine der drei großen Hokkaido-Ramenarten','溫泉街地標':'Wahrzeichen des Onsen-Orts','免費表演':'kostenlose Vorführung','直徑450公尺火口':'450 m breiter Krater','水溫約50°C':'Wassertemperatur ca. 50 °C','地獄谷步行10分':'10 Min. zu Fuß von Jigokudani','夢元さぎり湯旁':'bei Yumoto Sagiriyu','現蒸約100日圓/個':'frisch gedämpft, ca. 100 Yen/Stück','溫泉街各店':'in Läden im Onsen-Ort','松葉蟹・毛蟹':'Schneekrabbe und Hokkaido-Krabbe','溫泉街餐廳':'Restaurants im Onsen-Ort','約20:00 & 21:00':'ca. 20:00 und 21:00','最晚11:30離開市區':'spätestens 11:30 aus der Stadt','JR札幌駅直結':'direkt mit JR Sapporo verbunden','B1-B2食品區':'Food-Bereich B1-B2','機場3F':'Flughafen 3F','10家名店':'10 bekannte Läden','白色戀人':'Shiroi Koibito','北海道牛奶霜淇淋':'Hokkaido-Milch-Softeis','建議13:30前完成報到':'Check-in bis 13:30 empfohlen',
