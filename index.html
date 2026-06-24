@@ -119,6 +119,7 @@ html,body{width:100%;overflow-x:hidden;background:var(--cream);color:var(--text)
 .shopping-card{background:var(--white);border-radius:12px;padding:20px;box-shadow:var(--shadow);margin-top:24px}
 .shopping-card h3{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:14px;display:flex;align-items:center;gap:6px}
 .shopping-item{display:grid;grid-template-columns:132px minmax(0,1fr);gap:18px;padding:16px;border:1px solid var(--border);border-radius:12px;background:#fbfcfe}
+.shopping-item + .shopping-item{margin-top:12px}
 .shopping-thumb{width:132px;height:132px;border-radius:10px;object-fit:cover;object-position:center 45%;box-shadow:0 2px 10px rgba(26,39,68,0.12)}
 .shopping-info{min-width:0}
 .shopping-name{font-size:17px;font-weight:700;color:var(--navy);line-height:1.35}
@@ -393,6 +394,23 @@ html[lang="de"] .day-title{font-family:'Noto Sans TC',sans-serif}
         <p class="shopping-note">價格與各分店庫存可能變動，購買前請再確認。</p>
       </div>
     </article>
+    <article class="shopping-item">
+      <img class="shopping-thumb" src="assets/shopping/kayanoya-chicken-dashi.png" alt="茅乃舎 鶏だし 16袋入" loading="lazy"/>
+      <div class="shopping-info">
+        <div class="shopping-name">茅乃舎 雞高湯包</div>
+        <div class="shopping-ja" lang="ja">茅乃舎 鶏だし（8g×16袋入）</div>
+        <p class="shopping-desc">以燻製國產雞肉削片製成，搭配干貝的鮮味與薑、蔥香氣，味道清爽但有層次。可整包煮 4–5 分鐘做湯、粥或麵，也能剪開加入炒飯、炒蔬菜與麻婆豆腐。</p>
+        <div class="shopping-meta">
+          <div class="shopping-meta-row"><span class="shopping-meta-label">可能購買店家</span><span>茅乃舎 大丸札幌店（大丸札幌店 B1，札幌站直結）</span></div>
+          <div class="shopping-meta-row"><span class="shopping-meta-label">參考價格</span><span>¥2,268／16袋（每袋約 ¥142）</span></div>
+        </div>
+        <div class="shopping-links">
+          <a class="shopping-link" href="https://www.kubara.jp/kayanoya/all_dashi/toridashi/679500/" target="_blank" rel="noopener">茅乃舎商品資訊 ↗</a>
+          <a class="shopping-link" href="https://www.kayanoya.com/shop/daimaru-sapporo/" target="_blank" rel="noopener">大丸札幌店資訊 ↗</a>
+        </div>
+        <p class="shopping-note">價格與店內庫存可能變動，購買前請再確認。</p>
+      </div>
+    </article>
   </div>
 </div>
 
@@ -506,6 +524,14 @@ const de = {
   'KALDI 商品資訊 ↗':'KALDI Produktinfo ↗',
   'Alpen 商品資訊 ↗':'Alpen Produktinfo ↗',
   '價格與各分店庫存可能變動，購買前請再確認。':'Preise und Filialbestände können sich ändern; bitte vor dem Kauf prüfen.',
+  '茅乃舎 雞高湯包':'Kayanoya Hühner-Dashi',
+  '茅乃舎 鶏だし（8g×16袋入）':'Kayanoya Chicken Dashi (16 Beutel à 8 g)',
+  '以燻製國產雞肉削片製成，搭配干貝的鮮味與薑、蔥香氣，味道清爽但有層次。可整包煮 4–5 分鐘做湯、粥或麵，也能剪開加入炒飯、炒蔬菜與麻婆豆腐。':'Aus geräucherten japanischen Hühnerflocken, verfeinert mit Jakobsmuschel, Ingwer und Frühlingszwiebel. Leicht, aber aromatisch. Den Beutel 4-5 Minuten für Suppe, Reisbrei oder Nudeln mitkochen oder öffnen und für gebratenen Reis, Gemüse und Mapo-Tofu verwenden.',
+  '茅乃舎 大丸札幌店（大丸札幌店 B1，札幌站直結）':'Kayanoya im Daimaru Sapporo (B1, direkt an Sapporo Station)',
+  '¥2,268／16袋（每袋約 ¥142）':'¥2.268 / 16 Beutel (ca. ¥142 pro Beutel)',
+  '茅乃舎商品資訊 ↗':'Kayanoya Produktinfo ↗',
+  '大丸札幌店資訊 ↗':'Daimaru Sapporo Info ↗',
+  '價格與店內庫存可能變動，購買前請再確認。':'Preis und Bestand im Geschäft können sich ändern; bitte vor dem Kauf prüfen.',
   '大通公園・狸小路':'Odori Park und Tanukikoji','新千歲機場 13:35 → 札幌':'New Chitose Airport 13:35 -> Sapporo','運河・海鮮':'Kanal und Seafood','小樽一日遊':'Tagesausflug nach Otaru','味噌拉麵・藻岩山':'Miso-Ramen und Mt. Moiwa','札幌拉麵':'Sapporo-Ramen','北海道開拓の村・日本職棒':'Historical Village und Baseball','北海道火腿鬥士隊':'Hokkaido Fighters','北海盆踊り・莫埃來沼公園':'Hokkai Bon Odori und Moerenuma Park','日本盂蘭盆節':'Japanisches Obon-Fest','富良野・美瑛':'Furano und Biei','四季彩之丘・旭川拉麵':'Shikisai-no-Oka und Asahikawa-Ramen','美瑛・富良野一日遊':'Tagesausflug nach Biei und Furano','火山溫泉・地獄谷':'Vulkanische Quellen und Jigokudani','登別一日遊':'Tagesausflug nach Noboribetsu','購物・新千歲拉麵道場':'Shopping und New Chitose Ramen Dojo','新千歲 CI131 15:05':'New Chitose CI131 15:05',
   '住宿 CHECK-IN':'Unterkunft Check-in','晚餐・必吃':'Abendessen, Empfehlung','特殊活動':'Besonderes Event','景點':'Sehenswürdigkeit','景點・購物':'Sehenswürdigkeit und Shopping','早餐・必吃':'Frühstück, Empfehlung','必吃・甜點':'Dessert, Empfehlung','景點・壓軸':'Höhepunkt','午餐・必吃':'Mittagessen, Empfehlung','甜點・必吃':'Dessert, Empfehlung','特殊活動・壓軸':'Event-Höhepunkt','景點・散步':'Spaziergang','購物':'Shopping','出發':'Abflug','退房':'Check-out','回程':'Rückweg','必吃':'Empfehlung','體驗':'Erlebnis',
   '公寓式飯店':'Apartment-Hotel','中島公園駅步行5分':'5 Min. zu Fuß von Nakajima-koen Station','北海道名物':'Hokkaido-Spezialität','薄野':'Susukino','8月限定':'nur im August','免費入場':'Eintritt frei','地標':'Wahrzeichen','夜景':'Nachtblick','購物':'Shopping','有屋頂・雨天OK':'überdacht, regentauglich','新鮮海鮮':'frisches Seafood','JR小樽駅前1分':'1 Min. vor JR Otaru Station','伴手禮':'Souvenirs','雙層起司蛋糕':'Double Fromage Cheesecake','堺町通り':'Sakaimachi-dori','現烤泡芙':'frische Windbeutel','年輪蛋糕':'Baumkuchen','玻璃工藝':'Glaskunst','DIY體驗':'DIY-Erlebnis','傍晚點燈最美':'abends mit Beleuchtung am schönsten','野外美術館':'Freilichtmuseum','約2小時':'ca. 2 Std.','雕塑×自然':'Skulptur und Natur','札幌名物':'Sapporo-Spezialität','お盆須排隊':'Obon: Wartezeit einplanen','奶油夾心餅乾':'Butter-Sand-Kekse','內用咖啡廳':'Café vor Ort','日本新三大夜景':'eine der neuen Top-3-Nachtansichten Japans','纜車+迷你纜車':'Seilbahn + Mini Cable Car','夏季10:30–22:00':'Sommer 10:30-22:00','戶外博物館':'Freilichtmuseum','約2–3小時':'ca. 2-3 Std.','夏季馬車':'Sommerkutsche','2023年新球場':'neues Stadion von 2023','可開合屋頂':'bewegliches Dach','需預購票':'Tickets vorher kaufen','8/13週四主場':'13.08. Donnerstag Heimspiel','16:00入場':'Einlass 16:00','18:00開打':'Spielbeginn 18:00','伊薩姆·野口設計':'Design von Isamu Noguchi','約1–2小時':'ca. 1-2 Std.','札幌湯咖哩':'Sapporo Soup Curry','大通・薄野之間':'zwischen Odori und Susukino','1878年建造':'erbaut 1878','大通駅步行5分':'5 Min. zu Fuß von Odori Station','免費入場':'Eintritt frei','時計台步行3分':'3 Min. vom Clock Tower','祈福求籤':'Beten und Omikuji','圓山公園旁':'neben Maruyama Park','北海盆唄':'Hokkai Bon Uta','太鼓':'Taiko-Trommeln','彩色花毯丘陵':'bunte Blumenteppich-Hügel','7–9月入場800日圓':'Juli-Sept. Eintritt 800 Yen','約3–4小時':'ca. 3-4 Std.','北海道湯咖哩':'Hokkaido Soup Curry','現炸馬鈴薯可樂餅':'frische Kartoffel-Kroketten','日本第一步行天國':'Japans erste Fußgängerzone','旭川駅出站即進入':'direkt ab Asahikawa Station','醬油豚骨海鮮湯底':'Shoyu-Brühe mit Schwein und Seafood','北海道三大拉麵':'eine der drei großen Hokkaido-Ramenarten','溫泉街地標':'Wahrzeichen des Onsen-Orts','免費表演':'kostenlose Vorführung','直徑450公尺火口':'450 m breiter Krater','水溫約50°C':'Wassertemperatur ca. 50 °C','地獄谷步行10分':'10 Min. zu Fuß von Jigokudani','夢元さぎり湯旁':'bei Yumoto Sagiriyu','現蒸約100日圓/個':'frisch gedämpft, ca. 100 Yen/Stück','溫泉街各店':'in Läden im Onsen-Ort','松葉蟹・毛蟹':'Schneekrabbe und Hokkaido-Krabbe','溫泉街餐廳':'Restaurants im Onsen-Ort','約20:00 & 21:00':'ca. 20:00 und 21:00','最晚11:30離開市區':'spätestens 11:30 aus der Stadt','JR札幌駅直結':'direkt mit JR Sapporo verbunden','B1-B2食品區':'Food-Bereich B1-B2','機場3F':'Flughafen 3F','10家名店':'10 bekannte Läden','白色戀人':'Shiroi Koibito','北海道牛奶霜淇淋':'Hokkaido-Milch-Softeis','建議13:30前完成報到':'Check-in bis 13:30 empfohlen',
