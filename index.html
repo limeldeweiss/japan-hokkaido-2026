@@ -357,7 +357,7 @@ html[lang="de"] .day-title{font-family:'Noto Sans TC',sans-serif}
       <thead><tr><th>日期</th><th>地點</th><th>交通</th><th>亮點</th></tr></thead>
       <tbody>
         <tr><td><span class="day-badge">Day 1</span><br/>8/12（三）</td><td>新千歲→札幌</td><td>JR 45分</td><td>大通公園啤酒花園、成吉思汗烤羊肉</td></tr>
-        <tr><td><span class="day-badge">Day 2</span><br/>8/13（四）</td><td>札幌外圍</td><td>JR・巴士</td><td>北海道開拓の村、ES CON FIELD 職棒</td></tr>
+        <tr><td><span class="day-badge">Day 2</span><br/>8/13（四）</td><td>札幌外圍</td><td>JR・地下鐵・巴士</td><td>北海道開拓の村；分流：ES CON FIELD 職棒／白色戀人公園</td></tr>
         <tr><td><span class="day-badge">Day 3</span><br/>8/14（五）</td><td>小樽</td><td>JR 35分</td><td>小樽運河、LeTAO起司蛋糕、海鮮丼</td></tr>
         <tr><td><span class="day-badge">Day 4</span><br/>8/15（六）</td><td>札幌南區</td><td>地鐵・巴士・市電</td><td>札幌藝術之森、味噌拉麵、藻岩山夜景</td></tr>
         <tr><td><span class="day-badge">Day 5</span><br/>8/16（日）</td><td>札幌市中心</td><td>地鐵・巴士・步行</td><td>莫埃來沼公園、GARAKU湯咖哩、赤煉瓦廳、北海盆踊り</td></tr>
@@ -460,8 +460,8 @@ html[lang="de"] .day-title{font-family:'Noto Sans TC',sans-serif}
 <div class="view" id="day2">
   <div class="day-header">
     <div class="day-num">DAY 02 · 8月13日（四）</div>
-    <div class="day-title">札幌<br/>北海道開拓の村・日本職棒</div>
-    <div class="day-city-pill">⚾ 北海道火腿鬥士隊</div>
+    <div class="day-title">札幌<br/>北海道開拓の村・分流行程</div>
+    <div class="day-city-pill">⚾ 棒球／🍫 白色戀人公園</div>
   </div>
   <div class="timeline" id="tl-day2"></div>
 </div>
@@ -626,6 +626,10 @@ Object.assign(de, {
 });
 
 Object.assign(de, {
+  'JR・地下鐵・巴士':'JR, U-Bahn und Bus',
+  '北海道開拓の村；分流：ES CON FIELD 職棒／白色戀人公園':'Historical Village; danach Baseball im ES CON FIELD oder Shiroi Koibito Park',
+  '北海道開拓の村・分流行程':'Historical Village und zwei Alternativen',
+  '⚾ 棒球／🍫 白色戀人公園':'⚾ Baseball / 🍫 Shiroi Koibito Park',
   '飯店 → 地下鐵南北線「中島公園駅」→「さっぽろ駅」→ JR札幌駅 → JR千歲線（約8分）→「新札幌駅」→ JR北海道バス「新22」（約15分）→「開拓の村」':'Hotel -> U-Bahn Namboku-Linie Nakajima-koen -> Sapporo -> JR Sapporo Station -> JR Chitose-Linie (ca. 8 Min.) -> Shin-Sapporo -> JR Hokkaido Bus Shin 22 (ca. 15 Min.) -> Historical Village',
   '北海道開拓の村':'Historical Village of Hokkaido',
   '在廣大的原野中重建了明治～昭和初期北海道各地建築物的大型戶外博物館，佔地54公頃，超過52棟歷史建築物從各地移址保存於此，包括農家、漁村、商家、官廳等，完整重現了北海道開拓時代的生活樣貌。夏季（9–17時）有馬車可以搭乘，走進建築物內還有志工穿著傳統服裝解說。門票：大人800日圓，高中生600日圓。JR北海道バス新22，約1小時2班。':'Großes Freilichtmuseum mit rekonstruierten Gebäuden aus Hokkaido von der Meiji- bis frühen Showa-Zeit. Auf 54 ha stehen über 52 historische Gebäude wie Bauernhäuser, Fischerdörfer, Läden und Behörden. Im Sommer gibt es Kutschen und freiwillige Guides in traditioneller Kleidung. Eintritt: Erwachsene 800 Yen, Oberschüler 600 Yen.',
@@ -635,6 +639,15 @@ Object.assign(de, {
   '北海道日本火腿鬥士隊主場比賽':'Heimspiel der Hokkaido Nippon-Ham Fighters',
   '8月13日（四）18:00開打，16:00開放入場。北海道日本火腿鬥士隊（Hokkaido Nippon-Ham Fighters）對埼玉西武獅（Saitama Seibu Lions），地點為 ES CON FIELD HOKKAIDO。右外野座位每人 9,000 JPY，若只想進場感受球場氣氛也可選純入場每人 4,000 JPY。建議提早到場吃晚餐、逛球場周邊與拍照。':'Am 13. August (Do) beginnt das Spiel um 18:00, Einlass ist ab 16:00. Hokkaido Nippon-Ham Fighters gegen Saitama Seibu Lions im ES CON FIELD HOKKAIDO. Sitzplätze im rechten Außenfeld kosten 9.000 JPY pro Person; reiner Eintritt kostet 4.000 JPY pro Person. Früh ankommen lohnt sich für Abendessen, Stadionrunde und Fotos.',
   'ES CON FIELD → 步行或接駁巴士 → JR北広島駅 → JR千歳線（約15分）→ JR札幌駅 → 地下鐵南北線（さっぽろ→中島公園，約5分）→ 飯店':'ES CON FIELD -> zu Fuß oder Shuttlebus -> JR Kitahiroshima -> JR Chitose-Linie (ca. 15 Min.) -> JR Sapporo -> U-Bahn Namboku-Linie (Sapporo -> Nakajima-koen, ca. 5 Min.) -> Hotel',
+  '不看棒球分流':'Alternative ohne Baseball',
+  '開拓の村 → 新札幌駅 → 地下鐵東西線（約35分）→ 宮之澤駅 → 步行約7分 → 白色戀人公園':'Historical Village -> Shin-Sapporo -> U-Bahn Tozai-Linie (ca. 35 Min.) -> Miyanosawa -> ca. 7 Min. zu Fuß -> Shiroi Koibito Park',
+  '景點・甜點':'Sehenswürdigkeit und Süßes',
+  '白色戀人公園（不看棒球者）':'Shiroi Koibito Park (Alternative ohne Baseball)',
+  '10:00–18:00':'10:00-18:00',
+  '付費區16:30前入場':'Bezahlbereich: Eintritt bis 16:30',
+  '限定甜點':'exklusive Süßigkeiten',
+  '不看棒球的人可從新札幌搭地下鐵東西線直達宮之澤，前往白色戀人公園。園內可參觀 CHOCOTOPIA FACTORY、認識白色戀人的製作與品牌歷史，也可逛玫瑰花園、拍攝歐式建築、購買園區限定伴手禮，品嚐白色戀人霜淇淋等甜點。官方目前公布營業時間為10:00–18:00，付費區最晚16:30入場；付費區票價為16歲以上800日圓、4–15歲400日圓，免費區的花園與購物不需門票。建議預留約2–3小時。':'Wer nicht zum Baseball geht, fährt ab Shin-Sapporo mit der Tozai-Linie direkt nach Miyanosawa zum Shiroi Koibito Park. Dort kann man die CHOCOTOPIA FACTORY und die Geschichte der Marke kennenlernen, durch den Rosengarten spazieren, die europäische Architektur fotografieren, exklusive Souvenirs kaufen und Shiroi-Koibito-Softeis probieren. Laut offizieller Website ist der Park derzeit von 10:00 bis 18:00 Uhr geöffnet; letzter Eintritt in den Bezahlbereich ist um 16:30 Uhr. Der Eintritt kostet 800 Yen ab 16 Jahren und 400 Yen für 4- bis 15-Jährige. Garten und Einkauf im kostenlosen Bereich benötigen kein Ticket. Etwa 2-3 Stunden einplanen.',
+  '白色戀人公園 → 步行約7分 → 宮之澤駅 → 地下鐵東西線（約16分）→ 大通駅 → 地下鐵南北線（約3分）→ 中島公園駅 → 飯店':'Shiroi Koibito Park -> ca. 7 Min. zu Fuß -> Miyanosawa -> U-Bahn Tozai-Linie (ca. 16 Min.) -> Odori -> U-Bahn Namboku-Linie (ca. 3 Min.) -> Nakajima-koen -> Hotel',
   '薄野 海鮮居酒屋':'Seafood-Izakaya in Susukino','磯魚 北のグルメ亭':'Isozakana Kita no Gourmet-tei','魚一心':'Uoisshin',
   '薄野一帶有眾多平價海鮮居酒屋，推薦「磯魚 北のグルメ亭」或「魚一心」，新鮮螃蟹、海膽、干貝，價格實惠。青少年可點特製餐點。飯店步行約10分。':'Rund um Susukino gibt es viele preiswerte Seafood-Izakaya. Empfehlenswert sind Isozakana Kita no Gourmet-tei oder Uoisshin mit frischer Krabbe, Seeigel und Jakobsmuscheln. Jugendliche finden ebenfalls passende Gerichte. Vom Hotel ca. 10 Min. zu Fuß.',
   '飯店 → 地下鐵南北線「中島公園駅」→「大通駅」→ 東豊線換乘 →「環状通東駅」（約8分）→ 中央バス東69/東79（約25分）→「モエレ沼公園東口」下車｜建議09:00出發':'Hotel -> U-Bahn Namboku-Linie Nakajima-koen -> Odori -> Umstieg Toho-Linie -> Kanjodori-higashi (ca. 8 Min.) -> Chuo Bus Higashi 69/79 (ca. 25 Min.) -> Moerenuma Koen Higashiguchi | Abfahrt ca. 09:00 empfohlen',
@@ -856,6 +869,9 @@ const days = {
     {icon:'⚾', label:'景點', name:'北海道日本火腿鬥士隊 ES CON FIELD', tags:[{type:'sight',text:'2023年新球場'},{type:'sight',text:'可開合屋頂'}], desc:'北海道日本火腿鬥士隊的新主場，屋頂可開合，設計前衛，場內有各式北海道美食攤位，即便不看球賽也值得逛逛。'},
     {icon:'🎉', label:'特殊活動', name:'北海道日本火腿鬥士隊主場比賽', tags:[{type:'event',text:'8/13週四主場'},{type:'event',text:'16:00入場'},{type:'event',text:'18:00開打'}], desc:'8月13日（四）18:00開打，16:00開放入場。北海道日本火腿鬥士隊（Hokkaido Nippon-Ham Fighters）對埼玉西武獅（Saitama Seibu Lions），地點為 ES CON FIELD HOKKAIDO。右外野座位每人 9,000 JPY，若只想進場感受球場氣氛也可選純入場每人 4,000 JPY。建議提早到場吃晚餐、逛球場周邊與拍照。'},
     {type:'transport', icon:'🚃', label:'交通', name:'ES CON FIELD → 步行或接駁巴士 → JR北広島駅 → JR千歳線（約15分）→ JR札幌駅 → 地下鐵南北線（さっぽろ→中島公園，約5分）→ 飯店'},
+    {type:'transport', icon:'🔀', label:'不看棒球分流', name:'開拓の村 → 新札幌駅 → 地下鐵東西線（約35分）→ 宮之澤駅 → 步行約7分 → 白色戀人公園'},
+    {icon:'🍫', label:'景點・甜點', name:'白色戀人公園（不看棒球者）', tags:[{type:'sight',text:'10:00–18:00'},{type:'sight',text:'付費區16:30前入場'},{type:'food',text:'限定甜點'}], desc:'不看棒球的人可從新札幌搭地下鐵東西線直達宮之澤，前往白色戀人公園。園內可參觀 CHOCOTOPIA FACTORY、認識白色戀人的製作與品牌歷史，也可逛玫瑰花園、拍攝歐式建築、購買園區限定伴手禮，品嚐白色戀人霜淇淋等甜點。官方目前公布營業時間為10:00–18:00，付費區最晚16:30入場；付費區票價為16歲以上800日圓、4–15歲400日圓，免費區的花園與購物不需門票。建議預留約2–3小時。'},
+    {type:'transport', icon:'🚃', label:'交通', name:'白色戀人公園 → 步行約7分 → 宮之澤駅 → 地下鐵東西線（約16分）→ 大通駅 → 地下鐵南北線（約3分）→ 中島公園駅 → 飯店'},
     {icon:'🍣', label:'晚餐・必吃', name:'薄野 海鮮居酒屋', tags:[{type:'food',text:'磯魚 北のグルメ亭'},{type:'food',text:'魚一心'}], desc:'薄野一帶有眾多平價海鮮居酒屋，推薦「磯魚 北のグルメ亭」或「魚一心」，新鮮螃蟹、海膽、干貝，價格實惠。青少年可點特製餐點。飯店步行約10分。'},
   ],
   'tl-day3': [
