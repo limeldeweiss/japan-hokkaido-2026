@@ -359,8 +359,8 @@ html[lang="de"] .day-title{font-family:'Noto Sans TC',sans-serif}
         <tr><td><span class="day-badge">Day 1</span><br/>8/12（三）</td><td>新千歲→札幌</td><td>JR 45分</td><td>大通公園啤酒花園、成吉思汗烤羊肉</td></tr>
         <tr><td><span class="day-badge">Day 2</span><br/>8/13（四）</td><td>札幌南區・北廣島</td><td>地鐵・巴士・JR</td><td>頭大佛、札幌藝術之森、ES CON FIELD 職棒／藻岩山</td></tr>
         <tr><td><span class="day-badge">Day 3</span><br/>8/14（五）</td><td>小樽</td><td>JR 35分</td><td>小樽運河、LeTAO起司蛋糕、海鮮丼</td></tr>
-        <tr><td><span class="day-badge">Day 4</span><br/>8/15（六）</td><td>札幌市區</td><td>地下鐵・步行</td><td>北海道大學、北海道神宮、味噌拉麵、六花亭札幌本店</td></tr>
-        <tr><td><span class="day-badge">Day 5</span><br/>8/16（日）</td><td>札幌市中心</td><td>地鐵・巴士・步行</td><td>莫埃來沼公園、GARAKU湯咖哩、赤煉瓦廳、北海盆踊り</td></tr>
+        <tr><td><span class="day-badge">Day 4</span><br/>8/15（六）</td><td>札幌市區</td><td>地下鐵・步行・市電</td><td>諏訪神社、北海道大學、北海道神宮、すみれ晚餐、藻岩山夜景</td></tr>
+        <tr><td><span class="day-badge">Day 5</span><br/>8/16（日）</td><td>札幌市中心</td><td>地鐵・巴士・步行</td><td>莫埃來沼公園、GARAKU湯咖哩、六花亭札幌本店、北海盆踊り</td></tr>
         <tr><td><span class="day-badge">Day 6</span><br/>8/17（一）</td><td>美瑛・富良野・旭川</td><td>JR特急+富良野線</td><td>四季彩之丘花田、羊駝、旭川拉麵</td></tr>
         <tr><td><span class="day-badge">Day 7</span><br/>8/18（二）</td><td>登別</td><td>JR特急 70分</td><td>地獄谷、大湯沼、鬼煙火秀</td></tr>
         <tr><td><span class="day-badge">Day 8</span><br/>8/19（三）</td><td>札幌→新千歲</td><td>JR 45分</td><td>機場拉麵道場、CI131 15:05返台</td></tr>
@@ -480,8 +480,8 @@ html[lang="de"] .day-title{font-family:'Noto Sans TC',sans-serif}
 <div class="view" id="day4">
   <div class="day-header">
     <div class="day-num">DAY 04 · 8月15日（六）</div>
-    <div class="day-title">札幌<br/>北海道大學・北海道神宮・味噌拉麵</div>
-    <div class="day-city-pill">⛩️ 市區文化散步</div>
+    <div class="day-title">札幌<br/>諏訪神社・北大・神宮・藻岩山</div>
+    <div class="day-city-pill">⛩️ 市區文化散步／🏔️ 夜景</div>
   </div>
   <div class="timeline" id="tl-day4"></div>
 </div>
@@ -931,19 +931,24 @@ const days = {
     {type:'transport', icon:'🚃', label:'交通', name:'JR 小樽駅 → JR 札幌駅（35分）→ 地下鐵 → 飯店｜建議17:00–18:00搭車'},
   ],
   'tl-day4': [
-    {type:'transport', icon:'🚇', label:'交通', name:'飯店 → 地下鐵南北線「中島公園駅」→「さっぽろ駅」（約5分）→ 步行約10分 → 北海道大學札幌校區｜建議08:30出發'},
-    {icon:'🎓', label:'景點', name:'北海道大學札幌校區', tags:[{type:'sight',text:'校園散步'},{type:'sight',text:'約60–90分鐘'},{type:'sight',text:'綠蔭'}], desc:'第4天早上先逛北海道大學。從札幌站北口步行可達，校園內的古河講堂、克拉克像與綠蔭步道適合晨間散步；請避開教學與研究空間，預留約60–90分鐘。'},
-    {type:'transport', icon:'🚇', label:'交通', name:'北海道大學 → 步行至北12條駅或札幌駅 → 地下鐵南北線至大通駅 → 轉東西線至円山公園駅 → 步行約15分 → 北海道神宮'},
-    {icon:'⛩️', label:'景點', name:'北海道神宮', tags:[{type:'sight',text:'祈福求籤'},{type:'sight',text:'円山公園旁'},{type:'sight',text:'上午參拜'}], desc:'上午接著前往北海道神宮，沿円山公園綠蔭步行參拜、祈福與求籤。可順路品嚐六花亭神宮茶屋的現烤「判官樣」紅豆年糕；含步行與休息建議抓約90分鐘。'},
-    {type:'transport', icon:'🚇', label:'交通', name:'北海道神宮 → 步行約15分 → 円山公園駅 → 地下鐵東西線至大通駅 → 轉南北線至すすきの駅'},
-    {icon:'🍜', label:'午餐・必吃', name:'すみれ 札幌すすきの店 味噌拉麵', tags:[{type:'food',text:'札幌名物'},{type:'food',text:'お盆須排隊'}], desc:'完成上午的北海道大學與北海道神宮後回到薄野午餐。札幌是日本味噌拉麵的發源地，すみれ以濃厚味噌湯底與炒香蔬菜聞名；8月お盆期間容易排隊，抵達時間若較晚可改附近分店或其他味噌拉麵名店。'},
-    {icon:'🍶', label:'甜點・必吃', name:'六花亭 札幌本店', tags:[{type:'food',text:'奶油夾心餅乾'},{type:'food',text:'內用咖啡廳'}], desc:'北海道代表性菓子品牌，札幌本店有可內用的咖啡廳，招牌マルセイバターサンド是必買伴手禮。藻岩山已移到第二天，第四天下午可留在札幌市區輕鬆逛街與休息。'},
+    {type:'transport', icon:'🚇', label:'交通', name:'飯店 → 地下鐵南北線「中島公園駅」→「さっぽろ駅」（約5分）→ 步行約15分 → 札幌諏訪神社｜建議08:30出發'},
+    {icon:'⛩️', label:'景點・第一站', name:'札幌諏訪神社', tags:[{type:'sight',text:'參拜'},{type:'sight',text:'御守'}], desc:'第4天先到札幌諏訪神社參拜、拍照與挑選御守；境內安靜，適合作為市區散步的開場。'},
+    {type:'transport', icon:'🚶', label:'交通', name:'札幌諏訪神社 → 步行約20分 → 北海道大學札幌校區'},
+    {icon:'🎓', label:'景點', name:'北海道大學札幌校區', tags:[{type:'sight',text:'校園散步'},{type:'sight',text:'約60–90分鐘'},{type:'sight',text:'綠蔭'}], desc:'從諏訪神社步行進入北大北側，再沿林蔭校園向札幌站方向散步。古河講堂、克拉克像與草坪都適合停留拍照；請避開教學與研究空間。'},
+    {icon:'🍱', label:'午餐・必吃', name:'北大／札幌站周邊午餐', tags:[{type:'food',text:'步行可達'},{type:'food',text:'預留60分鐘'}], desc:'在北大正門到札幌站一帶用午餐最順，餐後可直接由札幌站接地下鐵前往北海道神宮；熱門店建議先取號。'},
+    {type:'transport', icon:'🚇', label:'交通', name:'札幌駅 → 地下鐵南北線至大通駅 → 轉東西線至円山公園駅 → 步行約15分 → 北海道神宮'},
+    {icon:'⛩️', label:'景點', name:'北海道神宮', tags:[{type:'sight',text:'祈福求籤'},{type:'sight',text:'円山公園旁'},{type:'sight',text:'午後參拜'}], desc:'午後在圓山公園綠蔭中步行至北海道神宮參拜、祈福與求籤。六花亭改到第5天札幌本店，今天保留充裕時間給晚餐與夜景。'},
+    {type:'transport', icon:'🚇', label:'交通', name:'北海道神宮 → 步行約15分 → 円山公園駅 → 東西線至大通駅 → 轉南北線至すすきの駅'},
+    {icon:'🍜', label:'晚餐・必吃', name:'すみれ 札幌すすきの店 味噌拉麵', tags:[{type:'food',text:'札幌名物'},{type:'food',text:'お盆須排隊'}], desc:'回到薄野後提早吃晚餐。すみれ以濃厚味噌湯底與炒香蔬菜聞名；8月お盆期間容易排隊，建議提早抵達，吃完正好接藻岩山夜景。'},
+    {type:'transport', icon:'🚋', label:'交通', name:'薄野市電站 → 市電外回り至「ロープウェイ入口」→ 免費接駁巴士（約15分一班）→ 藻岩山麓駅'},
+    {icon:'🏔️', label:'景點・壓軸', name:'藻岩山 夜景', tags:[{type:'sight',text:'日本新三大夜景'},{type:'sight',text:'纜車+迷你纜車'}], desc:'晚餐後搭市電與免費接駁車上藻岩山，安排日落後的札幌夜景。下山後依原路回薄野，再步行或搭地鐵回飯店；遇低雲、強風或停駛時，改在薄野或狸小路活動。'},
   ],
   'tl-day5': [
     {type:'transport', icon:'🚇', label:'交通', name:'飯店 → 地下鐵南北線「中島公園駅」→「大通駅」→ 東豊線換乘 →「環状通東駅」（約8分）→ 中央バス東69/東79（約25分）→「モエレ沼公園東口」下車｜建議09:00出發'},
     {icon:'🗿', label:'景點', name:'莫埃來沼公園（モエレ沼公園）', tags:[{type:'sight',text:'伊薩姆·野口設計'},{type:'sight',text:'約1–2小時'},{type:'sight',text:'免費入場'}], desc:'由日裔美籍世界級雕塑家伊薩姆·野口（Isamu Noguchi）以「將整座公園打造成一件雕塑作品」為理念所設計，1982年動工，2005年全面開放。佔地約188.8公頃，入場完全免費。園內最具代表性的是玻璃金字塔「HIDAMARI」、直徑48公尺的海之噴水（定時噴發），以及可登頂俯瞰全園的「モエレ山（海拔62公尺人工山）」。租借園內自行車（200日圓/2小時）是最有效率的遊覽方式。注意：巴士班次約1小時2班，回程請提前確認時刻。'},
     {type:'transport', icon:'🚌', label:'交通', name:'モエレ沼公園東口 → 中央バス東69/東79（約25分）→「環状通東駅」→ 地下鐵東豊線（約8分）→「大通駅」→ 步行約5分 → GARAKU湯咖哩本店'},
     {icon:'🍛', label:'午餐・必吃', name:'GARAKU 湯咖哩本店', tags:[{type:'food',text:'札幌湯咖哩'},{type:'food',text:'大通・薄野之間'},{type:'food',text:'お盆須排隊'}], desc:'札幌湯咖哩人氣名店，本店位於南2条西2丁目一帶，從大通站或薄野站步行都很方便。招牌是香料層次濃、蔬菜份量足的湯咖哩，可依喜好選辣度與飯量。8月お盆期間容易排隊，從莫埃來沼公園回市區後建議直接前往。'},
+    {icon:'🍶', label:'甜點・必吃', name:'六花亭 札幌本店', tags:[{type:'food',text:'奶油夾心餅乾'},{type:'food',text:'內用咖啡廳'}], desc:'下午在札幌站附近安排六花亭札幌本店，內用咖啡廳休息並採買マルセイバターサンド等伴手禮。'},
     {icon:'🕰️', label:'景點', name:'札幌市時計台', tags:[{type:'sight',text:'1878年建造'},{type:'sight',text:'大通駅步行5分'}], desc:'1878年建造的農學校演武場，北海道開拓時代的象徵。雖被戲稱「日本三大失望景點之一」，但歷史意義深遠，周邊高樓包圍反而形成奇特趣味對比，值得順路一看。'},
     {icon:'🧱', label:'景點', name:'北海道廳舊本廳舍（赤煉瓦）', tags:[{type:'sight',text:'免費入場'},{type:'sight',text:'時計台步行3分'}], desc:'建於1888年的紅磚廳舍，國家重要文化財。內部可免費參觀北海道歷史展，庭院也開放入場，是札幌最上鏡的歷史建築。'},
     {type:'transport', icon:'🚶', label:'交通', name:'北海道廳舊本廳舍（赤煉瓦）→ 步行約10分 → 大通公園 2 丁目'},
