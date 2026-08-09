@@ -209,9 +209,20 @@ html,body{width:100%;overflow-x:hidden;background:var(--cream);color:var(--text)
 /* ── SECTION TITLE ── */
 .section-title{font-size:11.5px;letter-spacing:2px;text-transform:uppercase;color:var(--navy);opacity:0.5;font-weight:700;margin:28px 0 14px;display:flex;align-items:center;gap:8px}
 .section-title::after{content:'';flex:1;height:1px;background:var(--border)}
-.subway-map-card{margin:0;background:#050505;border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
-.subway-map-card a{display:block;line-height:0}
+.subway-map-card{margin:0;background:#fff;border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+.subway-map-trigger{display:block;width:100%;border:0;background:#fff;line-height:0;cursor:zoom-in;padding:0}
 .subway-map-card img{display:block;width:100%;height:auto;object-fit:contain}
+.map-viewer{position:fixed;inset:0;z-index:1000;display:none;flex-direction:column;background:rgba(6,12,25,0.96);overscroll-behavior:contain}
+.map-viewer.open{display:flex}
+body.map-viewer-open{overflow:hidden}
+.map-viewer-toolbar{height:58px;flex:0 0 58px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 12px;background:#111b31;color:#fff;box-shadow:0 2px 10px rgba(0,0,0,0.35)}
+.map-viewer-title{font-size:15px;font-weight:700;white-space:nowrap}
+.map-viewer-actions{display:flex;align-items:center;gap:8px}
+.map-viewer-btn{min-width:42px;height:42px;border:1px solid rgba(255,255,255,0.28);border-radius:9px;background:rgba(255,255,255,0.1);color:#fff;font:700 20px/1 'Noto Sans TC',sans-serif;cursor:pointer}
+.map-viewer-btn.close{font-size:24px;background:var(--red);border-color:var(--red)}
+.map-viewer-viewport{flex:1;min-height:0;overflow:auto;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y;padding:12px}
+.map-viewer-stage{min-width:100%;min-height:100%;display:flex;align-items:flex-start;justify-content:flex-start}
+.map-viewer-image{display:block;width:100%;max-width:none;height:auto;flex:none;margin:auto;transform-origin:center center}
 
 /* ── HOTEL INLINE PILLS ── */
 .hotel-pill{background:#e6ecf5;color:#1a2744;border-radius:20px;padding:3px 12px;font-size:12px;font-weight:600}
@@ -372,9 +383,9 @@ html[lang="de"] .day-title{font-family:'Noto Sans TC',sans-serif}
   </div>
   <div class="section-title">札幌地鐵圖</div>
   <figure class="subway-map-card">
-    <a href="assets/maps/sapporo-subway-map-tw.png?v=white-map" target="_blank" rel="noopener" aria-label="開啟札幌地鐵圖原始尺寸">
+    <button class="subway-map-trigger" type="button" onclick="openMapViewer()" aria-label="開啟札幌地鐵圖檢視器">
       <img src="assets/maps/sapporo-subway-map-tw.png?v=white-map" alt="札幌地鐵、路面電車與主要景點交通圖" loading="lazy"/>
-    </a>
+    </button>
   </figure>
   <div class="tips-card">
     <h3>💡 旅遊重點提示</h3>
@@ -533,8 +544,73 @@ html[lang="de"] .day-title{font-family:'Noto Sans TC',sans-serif}
 
 </div>
 
+<div class="map-viewer" id="map-viewer" role="dialog" aria-modal="true" aria-labelledby="map-viewer-title" aria-hidden="true">
+  <div class="map-viewer-toolbar">
+    <div class="map-viewer-title" id="map-viewer-title">札幌地鐵圖</div>
+    <div class="map-viewer-actions">
+      <button class="map-viewer-btn" type="button" onclick="zoomMap(-0.5)" aria-label="縮小地圖">−</button>
+      <button class="map-viewer-btn" type="button" onclick="resetMapZoom()" aria-label="重設地圖大小">↺</button>
+      <button class="map-viewer-btn" type="button" onclick="zoomMap(0.5)" aria-label="放大地圖">＋</button>
+      <button class="map-viewer-btn close" id="map-viewer-close" type="button" onclick="closeMapViewer()" aria-label="關閉地圖並返回總覽">×</button>
+    </div>
+  </div>
+  <div class="map-viewer-viewport" id="map-viewer-viewport">
+    <div class="map-viewer-stage">
+      <img class="map-viewer-image" id="map-viewer-image" src="assets/maps/sapporo-subway-map-tw.png?v=white-map" alt="札幌地鐵、路面電車與主要景點交通圖" draggable="false" ondblclick="zoomMap(0.5)"/>
+    </div>
+  </div>
+</div>
+
 <script>
 let currentLang = 'zh';
+let mapZoom = 1;
+
+function openMapViewer() {
+  const viewer = document.getElementById('map-viewer');
+  viewer.classList.add('open');
+  viewer.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('map-viewer-open');
+  resetMapZoom();
+  window.setTimeout(() => document.getElementById('map-viewer-close').focus(), 0);
+}
+
+function closeMapViewer() {
+  const viewer = document.getElementById('map-viewer');
+  viewer.classList.remove('open');
+  viewer.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('map-viewer-open');
+  document.querySelector('.subway-map-trigger').focus();
+}
+
+function setMapZoom(nextZoom) {
+  const viewport = document.getElementById('map-viewer-viewport');
+  const image = document.getElementById('map-viewer-image');
+  const oldWidth = Math.max(viewport.scrollWidth, 1);
+  const oldHeight = Math.max(viewport.scrollHeight, 1);
+  const centerX = (viewport.scrollLeft + viewport.clientWidth / 2) / oldWidth;
+  const centerY = (viewport.scrollTop + viewport.clientHeight / 2) / oldHeight;
+  mapZoom = Math.min(4, Math.max(1, nextZoom));
+  image.style.width = `${mapZoom * 100}%`;
+  window.requestAnimationFrame(() => {
+    viewport.scrollLeft = centerX * viewport.scrollWidth - viewport.clientWidth / 2;
+    viewport.scrollTop = centerY * viewport.scrollHeight - viewport.clientHeight / 2;
+  });
+}
+
+function zoomMap(change) {
+  setMapZoom(mapZoom + change);
+}
+
+function resetMapZoom() {
+  const viewport = document.getElementById('map-viewer-viewport');
+  mapZoom = 1;
+  document.getElementById('map-viewer-image').style.width = '100%';
+  viewport.scrollTo({left: 0, top: 0});
+}
+
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && document.getElementById('map-viewer').classList.contains('open')) closeMapViewer();
+});
 
 const de = {
   '中文':'中文','日本':'Japan ','北海道':'Hokkaido ','8日遊':'8 Tage','2026年8月12日(三) — 8月19日(三)':'12. August 2026 (Mi) - 19. August 2026 (Mi)',
