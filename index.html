@@ -209,6 +209,9 @@ html,body{width:100%;overflow-x:hidden;background:var(--cream);color:var(--text)
 /* ── SECTION TITLE ── */
 .section-title{font-size:11.5px;letter-spacing:2px;text-transform:uppercase;color:var(--navy);opacity:0.5;font-weight:700;margin:28px 0 14px;display:flex;align-items:center;gap:8px}
 .section-title::after{content:'';flex:1;height:1px;background:var(--border)}
+.subway-map-card{margin:0;background:#050505;border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+.subway-map-card a{display:block;line-height:0}
+.subway-map-card img{display:block;width:100%;height:auto;object-fit:contain}
 
 /* ── HOTEL INLINE PILLS ── */
 .hotel-pill{background:#e6ecf5;color:#1a2744;border-radius:20px;padding:3px 12px;font-size:12px;font-weight:600}
@@ -367,6 +370,12 @@ html[lang="de"] .day-title{font-family:'Noto Sans TC',sans-serif}
       </tbody>
     </table>
   </div>
+  <div class="section-title">札幌地鐵圖</div>
+  <figure class="subway-map-card">
+    <a href="assets/maps/sapporo-subway-map-tw.png" target="_blank" rel="noopener" aria-label="開啟札幌地鐵圖原始尺寸">
+      <img src="assets/maps/sapporo-subway-map-tw.png" alt="札幌地鐵、路面電車與主要景點交通圖" loading="lazy"/>
+    </a>
+  </figure>
   <div class="tips-card">
     <h3>💡 旅遊重點提示</h3>
     <div class="tip-item"><span class="tip-icon">🎫</span><div><strong>交通券：</strong>建議購買北海道鐵路周遊券（5日），涵蓋旭川、登別特急，三人使用非常划算</div></div>
@@ -536,7 +545,7 @@ const de = {
   '✈ 去程':'✈ Hinflug','✈ 回程':'✈ Rückflug','8/12（三）抵達新千歲 13:35':'12.08. (Mi) Ankunft New Chitose 13:35','8/19（三）新千歲出發 15:05':'19.08. (Mi) Abflug New Chitose 15:05',
   '🏨 住宿':'🏨 Unterkunft','中央區南8條西2丁目5-67（地鐵中島公園駅步行5分）':'Chuo-ku, Minami 8-jo Nishi 2-chome 5-67 (5 Min. zu Fuß von Nakajima-koen Station)',
   '7晚':'7 Nächte','€110/晚':'€110/Nacht','小廚房・洗衣機':'Kleine Küche und Waschmaschine','有電梯・冷氣':'Aufzug und Klimaanlage',
-  '8天行程一覽':'Übersicht der 8 Reisetage','日期':'Datum','地點':'Ort','交通':'Verkehr','亮點':'Highlights',
+  '8天行程一覽':'Übersicht der 8 Reisetage','札幌地鐵圖':'U-Bahn-Plan Sapporo','日期':'Datum','地點':'Ort','交通':'Verkehr','亮點':'Highlights',
   '新千歲→札幌':'New Chitose -> Sapporo','JR 45分':'JR 45 Min.','大通公園啤酒花園、成吉思汗烤羊肉':'Odori-Park-Biergarten, Jingisukan-Lammgrill',
   'JR 35分':'JR 35 Min.','小樽運河、LeTAO起司蛋糕、海鮮丼':'Otaru-Kanal, LeTAO-Käsekuchen, Seafood-Don',
   '札幌南區':'Sapporo Süd','札幌南區・北廣島':'Sapporo Süd und Kitahiroshima','地鐵・巴士・JR':'U-Bahn, Bus und JR','頭大佛、札幌藝術之森、ES CON FIELD 職棒／藻岩山':'Hill of the Buddha, Sapporo Art Park, Baseball im ES CON FIELD / Mt. Moiwa',
