@@ -43,6 +43,10 @@ html,body{width:100%;overflow-x:hidden;background:var(--cream);color:var(--text)
 .pill.red:hover{background:#a93224}
 .pill-ja{font-size:13px;font-weight:600;line-height:1.2}
 .pill-en{font-size:8px;font-weight:400;opacity:0.65;letter-spacing:0.5px;line-height:1}
+.map-link{color:inherit;text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:2px;text-underline-offset:3px;cursor:pointer}
+.map-link:hover,.map-link:focus-visible{color:var(--red);text-decoration-thickness:3px}
+.stop-name .map-link,.stop-body .map-link{color:var(--navy);text-decoration-color:var(--gold)}
+.transport-card .map-link{color:#fff}
 .banner-mountain{position:absolute;bottom:0;left:0;right:0;pointer-events:none}
 
 /* ── NAV TABS ── */
@@ -852,6 +856,35 @@ function tr(text) {
   return de[text] || text;
 }
 
+// A Google Maps search URL opens the installed Maps app on mobile when possible,
+// and safely falls back to Google Maps in the browser.
+const mapPlaces = [
+  ['Hotel ONE\'S RESIDENCE', "Hotel ONE'S RESIDENCE, Sapporo, Japan"], ['新千歲機場', 'New Chitose Airport, Hokkaido, Japan'], ['New Chitose Airport', 'New Chitose Airport, Hokkaido, Japan'],
+  ['JR札幌駅', 'Sapporo Station, Hokkaido, Japan'], ['JR 札幌駅', 'Sapporo Station, Hokkaido, Japan'], ['札幌駅', 'Sapporo Station, Hokkaido, Japan'], ['Sapporo Station', 'Sapporo Station, Hokkaido, Japan'], ['中島公園駅', 'Nakajima-koen Station, Sapporo, Japan'], ['Nakajima-koen Station', 'Nakajima-koen Station, Sapporo, Japan'],
+  ['大通公園啤酒花園', 'Odori Park Beer Garden, Sapporo, Japan'], ['大通公園', 'Odori Park, Sapporo, Japan'], ['狸小路商店街', 'Tanukikoji Shopping Street, Sapporo, Japan'], ['成吉思汗烤羊肉 だるま本店', 'Jingisukan Daruma Main Store, Sapporo, Japan'],
+  ['頭大佛（丘の大仏）', 'Hill of the Buddha, Sapporo, Japan'], ['頭大佛', 'Hill of the Buddha, Sapporo, Japan'], ['札幌藝術之森', 'Sapporo Art Park, Japan'], ['ES CON FIELD HOKKAIDO', 'ES CON FIELD HOKKAIDO, Kitahiroshima, Japan'], ['ES CON FIELD', 'ES CON FIELD HOKKAIDO, Kitahiroshima, Japan'], ['藻岩山', 'Mt. Moiwa, Sapporo, Japan'], ['Mt. Moiwa', 'Mt. Moiwa, Sapporo, Japan'],
+  ['小樽三角市場', 'Sankaku Market, Otaru, Japan'], ['堺町通り', 'Sakaimachi Street, Otaru, Japan'], ['LeTAO 本店', 'LeTAO Main Store, Otaru, Japan'], ['北菓楼 kitakaro 本店', 'Kitakaro Otaru Main Store, Japan'], ['北一硝子 三號館', 'Kitaichi Glass Sangokan, Otaru, Japan'], ['小樽運河', 'Otaru Canal, Hokkaido, Japan'], ['JR 小樽駅', 'Otaru Station, Hokkaido, Japan'],
+  ['札幌諏訪神社', 'Sapporo Suwa Shrine, Japan'], ['北海道大學', 'Hokkaido University, Sapporo, Japan'], ['北海道神宮', 'Hokkaido Jingu Shrine, Sapporo, Japan'], ['六花亭札幌本店', 'Rokkatei Sapporo Main Store, Japan'], ['GARAKU', 'Soup Curry GARAKU, Sapporo, Japan'], ['莫埃來沼公園', 'Moerenuma Park, Sapporo, Japan'],
+  ['四季彩之丘', 'Shikisai no Oka, Biei, Hokkaido, Japan'], ['旭川ラーメン村', 'Asahikawa Ramen Village, Japan'], ['旭川駅', 'Asahikawa Station, Hokkaido, Japan'], ['地獄谷', 'Jigokudani Noboribetsu, Hokkaido, Japan'], ['大湯沼', 'Oyunuma Pond, Noboribetsu, Japan'], ['登別温泉', 'Noboribetsu Onsen, Hokkaido, Japan'], ['JR 登別駅', 'Noboribetsu Station, Hokkaido, Japan'],
+  ['札幌', 'Sapporo, Hokkaido, Japan'], ['小樽', 'Otaru, Hokkaido, Japan'], ['富良野', 'Furano, Hokkaido, Japan'], ['美瑛', 'Biei, Hokkaido, Japan'], ['旭川', 'Asahikawa, Hokkaido, Japan'], ['登別', 'Noboribetsu, Hokkaido, Japan']
+].sort((a, b) => b[0].length - a[0].length);
+// The capture group keeps the matched place name in String#split output.
+const mapPattern = new RegExp(`(${mapPlaces.map(([name]) => name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})`, 'gi');
+const mapUrl = query => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+
+function mapify(text, fallbackQuery) {
+  const value = String(text);
+  const hasKnownPlace = mapPattern.test(value);
+  mapPattern.lastIndex = 0;
+  if (!hasKnownPlace && fallbackQuery) {
+    return `<a class="map-link" href="${mapUrl(fallbackQuery)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">${value}</a>`;
+  }
+  return value.split(mapPattern).map(part => {
+    const place = mapPlaces.find(([name]) => name.toLocaleLowerCase() === part.toLocaleLowerCase());
+    return place ? `<a class="map-link" href="${mapUrl(place[1])}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">${part}</a>` : part;
+  }).join('');
+}
+
 function localizeStaticText() {
   const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
     acceptNode(node) {
@@ -941,7 +974,7 @@ function buildTimeline(containerId, stops) {
             <div class="stop-icon">${s.icon}</div>
             <div class="stop-info">
               <div class="stop-label" style="color:rgba(255,255,255,0.55)">${label}</div>
-              <div class="stop-name">${name}</div>
+              <div class="stop-name">${mapify(name, name)}</div>
             </div>
           </div>
         </div>
@@ -960,14 +993,14 @@ function buildTimeline(containerId, stops) {
           <div class="stop-icon">${s.icon}</div>
           <div class="stop-info">
             <div class="stop-label">${label}</div>
-            <div class="stop-name">${name}</div>
+            <div class="stop-name">${mapify(name, name)}</div>
           </div>
           <div class="stop-arrow">▼</div>
         </div>
         <div class="stop-body" id="body-${id}">
           <div class="stop-body-inner">
             <div class="tag-row">${tags}</div>
-            <p>${desc}</p>
+            <p>${mapify(desc)}</p>
           </div>
         </div>
       </div>
