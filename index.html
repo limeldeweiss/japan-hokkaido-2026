@@ -375,7 +375,7 @@ html[lang="de"] .day-title{font-family:'Noto Sans TC',sans-serif}
       <thead><tr><th>日期</th><th>地點</th><th>交通</th><th>亮點</th></tr></thead>
       <tbody>
         <tr><td><span class="day-badge">Day 1</span><br/>8/12（三）</td><td>新千歲→札幌</td><td>JR 45分</td><td>狸小路商店街、悠拉麵、KINOTOYA BAKE 冰淇淋</td></tr>
-        <tr><td><span class="day-badge">Day 2</span><br/>8/13（四）</td><td>札幌・北廣島</td><td>JR・地下鐵・步行</td><td>北海道大學、彌生軒午餐；ES CON 職棒／諏訪神社與蛋包飯分流</td></tr>
+        <tr><td><span class="day-badge">Day 2</span><br/>8/13（四）</td><td>札幌・北廣島</td><td>JR・地下鐵・步行</td><td>北海道大學、彌生軒午餐；ES CON 職棒／諏訪神社、北海道神宮與蛋包飯分流</td></tr>
         <tr><td><span class="day-badge">Day 3</span><br/>8/14（五）</td><td>小樽</td><td>JR 35分</td><td>小樽運河、LeTAO起司蛋糕、海鮮丼</td></tr>
         <tr><td><span class="day-badge">Day 4</span><br/>8/15（六）</td><td>富良野</td><td>JR 富良野線</td><td>富良野 Marche、富田農場、中富良野町營薰衣草園</td></tr>
         <tr><td><span class="day-badge">Day 5</span><br/>8/16（日）</td><td>札幌市中心</td><td>地鐵・巴士・步行</td><td>莫埃來沼公園、GARAKU湯咖哩、六花亭札幌本店、北海盆踊り</td></tr>
@@ -1135,12 +1135,18 @@ days['tl-day2'] = [
   {type:'transport', icon:'🚃', label:'看球者回程', name:'ES CON FIELD → F VILLAGE接駁車 → JR北廣島駅 → JR札幌駅 → 地下鐵南北線「中島公園駅」→ 旅館'},
   {type:'transport', icon:'⛩️', label:'不看球路線', name:'札幌駅 → 地下鐵東豐線 1 站至「北13条東駅」→ 步行至札幌諏訪神社'},
   {icon:'⛩️', label:'景點', name:'札幌諏訪神社', tags:[{type:'sight',text:'求御守'},{type:'sight',text:'市區散步'}], desc:'不看職棒的人從札幌站搭東豐線一站後前往札幌諏訪神社，安排參拜與挑選御守。'},
-  {type:'transport', icon:'🚇', label:'交通', name:'札幌諏訪神社 → 步行／地下鐵回札幌駅 → 札幌ステラプレイス'},
+  {type:'transport', icon:'🚇', label:'交通', name:'札幌諏訪神社 → 北13条東駅 → 地下鐵東豐線至大通駅 → 轉東西線至円山公園駅 → 步行約15分 → 北海道神宮'},
+  {icon:'⛩️', label:'景點', name:'北海道神宮', tags:[{type:'sight',text:'圓山公園旁'},{type:'sight',text:'參拜祈福'}], desc:'參拜完札幌諏訪神社後，接著前往北海道神宮。穿過圓山公園的綠蔭步道參拜祈福，感受札幌最具代表性的神社與森林氛圍。'},
+  {type:'transport', icon:'🚇', label:'交通', name:'北海道神宮 → 步行至円山公園駅 → 地下鐵東西線至大通駅 → 轉南北線至さっぽろ駅 → 步行至札幌ステラプレイス'},
   {icon:'🍳', label:'晚餐・必吃', name:'札幌ステラプレイス 蛋包飯', tags:[{type:'food',text:'札幌駅直結'},{type:'food',text:'蛋包飯'}], desc:'回到札幌站的 Stellar Place 吃蛋包飯晚餐，餐後搭地下鐵南北線回中島公園站，再步行回旅館。'},
   {type:'transport', icon:'🚇', label:'回程', name:'札幌駅 → 地下鐵南北線「中島公園駅」→ 步行回旅館'},
 ];
 
 Object.assign(de, {
+  '北海道神宮': 'Hokkaido-Schrein',
+  '札幌諏訪神社 → 北13条東駅 → 地下鐵東豐線至大通駅 → 轉東西線至円山公園駅 → 步行約15分 → 北海道神宮': 'Sapporo-Suwa-Schrein -> Kita-jusanjo-higashi -> Toho-Linie bis Odori -> Umstieg in die Tozai-Linie bis Maruyama-koen -> ca. 15 Min. zu Fuß -> Hokkaido-Schrein',
+  '參拜完札幌諏訪神社後，接著前往北海道神宮。穿過圓山公園的綠蔭步道參拜祈福，感受札幌最具代表性的神社與森林氛圍。': 'Nach dem Besuch des Sapporo-Suwa-Schreins geht es weiter zum Hokkaido-Schrein. Durch die grünen Wege des Maruyama Parks führt der Weg zu einem der bedeutendsten Schreine Sapporos.',
+  '北海道神宮 → 步行至円山公園駅 → 地下鐵東西線至大通駅 → 轉南北線至さっぽろ駅 → 步行至札幌ステラプレイス': 'Hokkaido-Schrein -> zu Fuß zur Maruyama-koen Station -> Tozai-Linie bis Odori -> Umstieg in die Namboku-Linie bis Sapporo -> zu Fuß zu Sapporo Stellar Place',
   '旭川': 'Asahikawa',
   '旭川・札幌': 'Asahikawa und Sapporo',
   '買物公園・藻岩山夜景': 'Kaimono-Park und Nachtblick vom Mt. Moiwa',
