@@ -1067,7 +1067,9 @@ const days = {
     {icon:'🧱', label:'景點', name:'北海道廳舊本廳舍（赤煉瓦）', tags:[{type:'sight',text:'免費入場'},{type:'sight',text:'時計台步行3分'}], desc:'建於1888年的紅磚廳舍，國家重要文化財。內部可免費參觀北海道歷史展，庭院也開放入場，是札幌最上鏡的歷史建築。'},
     {type:'transport', icon:'🚶', label:'交通', name:'北海道廳舊本廳舍（赤煉瓦）→ 步行約10分 → 大通公園 2 丁目'},
     {icon:'🎉', label:'特殊活動', name:'北海盆踊り (Hokkaido Bon Odori Festival)', tags:[{type:'event',text:'北海盆唄'},{type:'event',text:'太鼓'}], desc:'從大通公園 2 丁目進入，現場會搭起巨大的木製高台（櫓），太鼓手在上方擊鼓，市民與遊客身穿浴衣圍成數圈隨著《北海盆唄》起舞。強烈建議全家一起走入隊伍中跟著跳，這是日本夏天最震撼、最有人情味的文化體驗。'},
-    {type:'transport', icon:'🚇', label:'回程', name:'大通公園 → 步行或地下鐵南北線（1站）→「中島公園駅」→ 步行5分 → 飯店'},
+    {type:'transport', icon:'🚶', label:'交通', name:'大通公園 → 步行至大風堂'},
+    {icon:'🍜', label:'晚餐・必吃', name:'大風堂 博多拉麵', tags:[{type:'food',text:'博多豚骨拉麵'},{type:'food',text:'盆踊り後晚餐'}], desc:'看完北海盆踊り後，到大風堂享用博多拉麵作為晚餐。以濃郁豚骨湯頭與細麵為主，適合在夏祭活動後暖胃、補充體力。'},
+    {type:'transport', icon:'🚶', label:'回程', name:'大風堂 → 步行回旅館'},
   ],
   'tl-day6': [
     {type:'transport', icon:'🚃', label:'交通', name:'JR 札幌駅 → JR特急「カムイ/ライラック」（約90分）→ JR 旭川駅｜建議08:00出發'},
@@ -1142,6 +1144,10 @@ days['tl-day2'] = [
 ];
 
 Object.assign(de, {
+  '大通公園 → 步行至大風堂': 'Odori Park -> zu Fuß zu Dafuudo',
+  '大風堂 博多拉麵': 'Dafuudo Hakata-Ramen',
+  '看完北海盆踊り後，到大風堂享用博多拉麵作為晚餐。以濃郁豚骨湯頭與細麵為主，適合在夏祭活動後暖胃、補充體力。': 'Nach dem Hokkai Bon Odori gibt es bei Dafuudo Hakata-Ramen zum Abendessen. Die kräftige Tonkotsu-Brühe mit feinen Nudeln wärmt nach dem Sommerfest und gibt neue Energie.',
+  '大風堂 → 步行回旅館': 'Dafuudo -> zu Fuß zurück zum Hotel',
   '旅館 → 地下鐵南北線「中島公園駅」→「さっぽろ駅」→ JR快速Airport（45分）→ 新千歲機場｜最晚11:30–11:45出發': 'Hotel -> U-Bahn Namboku-Linie Nakajima-koen -> Sapporo -> JR Rapid Airport (45 Min.) -> New Chitose Airport | spätestens 11:30-11:45 abfahren',
   '新千歲機場 國內線出境 2F 伴手禮': 'Souvenirs im Inlands-Abflugbereich, 2. Stock, New Chitose',
   '前往國內線出境區 2F 採購最後伴手禮，六花亭、LeTAO、白色戀人、柳月等北海道人氣品牌都可一次選購；也別錯過 KINOTOYA 冰淇淋。建議預留1.5–2小時完成購物、報到與安檢。': 'Im Inlands-Abflugbereich im 2. Stock letzte Souvenirs kaufen: Rokkatei, LeTAO, Shiroi Koibito und Ryugetsu sind dort gebündelt erhältlich. KINOTOYA-Eis nicht verpassen. Für Einkäufe, Check-in und Sicherheitskontrolle 1,5-2 Stunden einplanen.',
