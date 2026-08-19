@@ -1095,11 +1095,10 @@ const days = {
     {icon:'💊', label:'購物・夜晚', name:'狸小路藥妝與唐吉訶德', tags:[{type:'sight',text:'藥妝採買'},{type:'sight',text:'Don Quijote'}], desc:'從藻岩山下來後到狸小路商店街逛藥妝與唐吉訶德，補齊零食、伴手禮和日用品；商店街有屋頂，即使下雨也方便逛。'},
   ],
   'tl-day8': [
-    {icon:'🏨', label:'退房', name:"Hotel ONE'S RESIDENCE 退房", tags:[{type:'hotel',text:'最晚11:30離開市區'}], desc:'CI131出發時間15:05，建議12:30前抵達新千歲機場。退房後行李可在大廳寄放，或直接帶往JR札幌駅寄存後再購物。最晚11:30–11:45搭上JR。'},
-    {icon:'🛍️', label:'購物', name:'JR タワーステラプレイス & 札幌駅地下街', tags:[{type:'sight',text:'JR札幌駅直結'},{type:'sight',text:'B1-B2食品區'}], desc:'JR札幌站地下連結多個大型商場，做最後的伴手禮採購。B1-B2食品區有白色戀人、六花亭、Royce巧克力等知名品牌，一次搞定所有土産。'},
-    {type:'transport', icon:'🚃', label:'交通', name:'JR 札幌駅 → JR快速Airport（45分）→ 新千歲機場｜最晚11:45出發'},
+    {icon:'🏨', label:'退房', name:"Hotel ONE'S RESIDENCE 退房", tags:[{type:'hotel',text:'最晚11:30離開市區'}], desc:'CI131出發時間15:05，建議12:30前抵達新千歲機場。退房後直接帶著行李前往機場，不再安排札幌站購物停靠。'},
+    {type:'transport', icon:'🚃', label:'交通', name:'旅館 → 地下鐵南北線「中島公園駅」→「さっぽろ駅」→ JR快速Airport（45分）→ 新千歲機場｜最晚11:30–11:45出發'},
     {icon:'🍜', label:'午餐・必吃', name:'新千歲空港 拉麵道場', tags:[{type:'food',text:'機場3F'},{type:'food',text:'10家名店'}], desc:'機場3F集結北海道各地10家知名拉麵，味噌、醬油、鹽味、海鮮全都有，是離開北海道前最後一碗麵的最佳選擇。各家排隊人潮多，建議抵達機場後立刻前往。'},
-    {icon:'🍫', label:'購物・必買', name:'新千歲機場免稅區 & 白色戀人旗艦店', tags:[{type:'food',text:'白色戀人'},{type:'food',text:'北海道牛奶霜淇淋'}], desc:'機場內購物區極豐富，有白色戀人工廠旗艦店（可現場品嚐）、北海道牛奶霜淇淋、各式土産。建議預留1.5–2小時在機場盡情採購最後的伴手禮。'},
+    {icon:'🍫', label:'購物・必買', name:'新千歲機場 國內線出境 2F 伴手禮', tags:[{type:'food',text:'六花亭・LeTAO・白色戀人・柳月'},{type:'food',text:'KINOTOYA 冰淇淋'}], desc:'前往國內線出境區 2F 採購最後伴手禮，六花亭、LeTAO、白色戀人、柳月等北海道人氣品牌都可一次選購；也別錯過 KINOTOYA 冰淇淋。建議預留1.5–2小時完成購物、報到與安檢。'},
     {icon:'✈️', label:'出發', name:'華航 CI131 新千歲 15:05 → 台灣', tags:[{type:'transport',text:'建議13:30前完成報到'}], desc:'建議13:30前完成報到手續與通關，前往登機門。帶著滿滿的北海道回憶與行李箱的土産，期待再訪！'},
   ],
 };
@@ -1143,6 +1142,9 @@ days['tl-day2'] = [
 ];
 
 Object.assign(de, {
+  '旅館 → 地下鐵南北線「中島公園駅」→「さっぽろ駅」→ JR快速Airport（45分）→ 新千歲機場｜最晚11:30–11:45出發': 'Hotel -> U-Bahn Namboku-Linie Nakajima-koen -> Sapporo -> JR Rapid Airport (45 Min.) -> New Chitose Airport | spätestens 11:30-11:45 abfahren',
+  '新千歲機場 國內線出境 2F 伴手禮': 'Souvenirs im Inlands-Abflugbereich, 2. Stock, New Chitose',
+  '前往國內線出境區 2F 採購最後伴手禮，六花亭、LeTAO、白色戀人、柳月等北海道人氣品牌都可一次選購；也別錯過 KINOTOYA 冰淇淋。建議預留1.5–2小時完成購物、報到與安檢。': 'Im Inlands-Abflugbereich im 2. Stock letzte Souvenirs kaufen: Rokkatei, LeTAO, Shiroi Koibito und Ryugetsu sind dort gebündelt erhältlich. KINOTOYA-Eis nicht verpassen. Für Einkäufe, Check-in und Sicherheitskontrolle 1,5-2 Stunden einplanen.',
   '北海道神宮': 'Hokkaido-Schrein',
   '札幌諏訪神社 → 北13条東駅 → 地下鐵東豐線至大通駅 → 轉東西線至円山公園駅 → 步行約15分 → 北海道神宮': 'Sapporo-Suwa-Schrein -> Kita-jusanjo-higashi -> Toho-Linie bis Odori -> Umstieg in die Tozai-Linie bis Maruyama-koen -> ca. 15 Min. zu Fuß -> Hokkaido-Schrein',
   '參拜完札幌諏訪神社後，接著前往北海道神宮。穿過圓山公園的綠蔭步道參拜祈福，感受札幌最具代表性的神社與森林氛圍。': 'Nach dem Besuch des Sapporo-Suwa-Schreins geht es weiter zum Hokkaido-Schrein. Durch die grünen Wege des Maruyama Parks führt der Weg zu einem der bedeutendsten Schreine Sapporos.',
